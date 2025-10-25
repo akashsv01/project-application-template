@@ -121,3 +121,29 @@ def overwrite_from_args(args):
                 set_parameter(name, value)
     except:
         pass
+
+
+class ConfigManager:
+    """
+    Object-oriented wrapper around the config module.
+    Provides convenient methods for accessing common paths.
+    """
+
+    def __init__(self, config_path=None):
+        self.config_path = config_path or _get_default_path()
+        _init_config(self.config_path)
+
+    def get(self, name, default=None):
+        return get_parameter(name, default)
+
+    def set(self, name, value):
+        set_parameter(name, value)
+
+    def overwrite_from_args(self, args):
+        overwrite_from_args(args)
+
+    def get_data_path(self):
+        return self.get("ENPM611_PROJECT_DATA_PATH")
+
+    def get_output_path(self):
+        return self.get("ENPM611_PROJECT_OUTPUT_PATH", default="output/")

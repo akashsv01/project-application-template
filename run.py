@@ -1,4 +1,4 @@
-
+from app.feature_runner import FeatureRunner
 
 """
 Starting point of the application. This module is invoked from
@@ -43,15 +43,19 @@ def parse_args():
 args = parse_args()
 # Add arguments to config so that they can be accessed in other parts of the application
 config.overwrite_from_args(args)
+
+runner = FeatureRunner()
+runner.initialize_components()
+
     
 # Run the feature specified in the --feature flag
 if args.feature == 0:
     ExampleAnalysis().run()
 elif args.feature == 1:
-    pass # TODO call first analysis
+    runner.run_feature(1)
 elif args.feature == 2:
-    pass # TODO call second analysis
+    runner.run_feature(2)
 elif args.feature == 3:
-    pass # TODO call third analysis
+    runner.run_feature(3)
 else:
     print('Need to specify which feature to run with --feature flag.')
