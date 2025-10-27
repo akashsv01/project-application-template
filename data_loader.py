@@ -1,43 +1,61 @@
-
 import json
+import pandas as pd
 from typing import List
-
 import config
 from model import Issue
 
-# Store issues as singleton to avoid reloads
-_ISSUES:List[Issue] = None
+_ISSUES: List[Issue] = None
 
 class DataLoader:
-    """
-    Loads the issue data into a runtime object.
-    """
-    
+    # Loads the issue data into runtime objects and provides DataFrame views
     def __init__(self):
-        """
-        Constructor
-        """
-        self.data_path:str = config.get_parameter('ENPM611_PROJECT_DATA_PATH')
-        
-    def get_issues(self):
-        """
-        This should be invoked by other parts of the application to get access
-        to the issues in the data file.
-        """
-        global _ISSUES # to access it within the function
-        if _ISSUES is None:
-            _ISSUES = self._load()
-            print(f'Loaded {len(_ISSUES)} issues from {self.data_path}.')
-        return _ISSUES
-    
-    def _load(self):
-        """
-        Loads the issues into memory.
-        """
-        with open(self.data_path,'r') as fin:
-            return [Issue(i) for i in json.load(fin)]
-    
+        self.file_path: str = config.get_parameter('ENPM611_PROJECT_DATA_PATH')
 
-if __name__ == '__main__':
-    # Run the loader for testing
-    DataLoader().get_issues()
+    def load_json(self):
+        with open(self.file_path, 'r') as fin:
+            return json.load(fin)
+
+    def get_issues(self) -> List[Issue]:
+        """Return list of Issue objects (cached)."""
+        global _ISSUES
+        if _ISSUES is None:
+            _ISSUES = [Issue(i) for i in self.load_json()]
+            print(f'Loaded {len(_ISSUES)} issues from {self.file_path}.')
+        return _ISSUES
+
+    def parse_issues(self) -> pd.DataFrame:
+        # Returns a DataFrame view of issues
+        issues = self.get_issues()
+        return pd.DataFrame([{
+            "number": i.number,
+            "creator": i.creator,
+            "labels": i.labels,
+            "state": i.state,
+            "created_date": i.created_date,
+            "updated_date": i.updated_date,
+            "events": i.events
+        } for i in issues])
+
+    def parse_events(self, issues_df: pd.DataFrame) -> pd.DataFrame:
+        # Flatten events from issues into a DataFrame.
+        events = []
+        for _, row in issues_df.iterrows():
+            for ev in row["events"]:
+                events.append({
+                    "issue_number": row["number"],
+                    "event_type": ev.event_type,
+                    "event_author": ev.author,
+                    "event_date": ev.event_date,
+                    "label": ev.label,
+                    "comment": ev.comment
+                })
+        return pd.DataFrame(events)
+
+    def validate_data(self) -> bool:
+        # Basic validation: returns issues loaded and have numbers
+        issues = self.get_issues()
+        return all(i.number is not None for i in issues)
+
+    def filter_by_state(self, state: str) -> List[Issue]:
+        # Return issues filtered by state ('open' or 'closed')
+        return [i for i in self.get_issues() if i.state.value == state]
