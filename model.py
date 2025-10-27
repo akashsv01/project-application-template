@@ -130,6 +130,22 @@ class Contributor:
         self.comments: List[Event] = []
         self.first_activity: datetime = None
         self.last_activity: datetime = None
+        
+    def add_issue(self, issue: Issue):
+        self.issues_created.append(issue)
+        self._update_activity(issue.created_date)
+
+    def add_comment(self, event: Event):
+        self.comments.append(event)
+        self._update_activity(event.event_date)
+
+    def _update_activity(self, date: datetime):
+        if not date:
+            return
+        if not self.first_activity or date < self.first_activity:
+            self.first_activity = date
+        if not self.last_activity or date > self.last_activity:
+            self.last_activity = date
 
     def get_activity_count(self) -> int:
         return len(self.issues_created) + len(self.comments)

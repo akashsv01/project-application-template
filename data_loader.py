@@ -33,7 +33,10 @@ class DataLoader:
             "state": i.state,
             "created_date": i.created_date,
             "updated_date": i.updated_date,
-            "events": i.events
+            "events": i.events,
+            "closure_date": i.get_closure_date(),
+            "resolution_time": i.get_resolution_time(),
+            "comment_count": i.get_comment_count()
         } for i in issues])
 
     def parse_events(self, issues_df: pd.DataFrame) -> pd.DataFrame:
@@ -59,3 +62,9 @@ class DataLoader:
     def filter_by_state(self, state: str) -> List[Issue]:
         # Return issues filtered by state ('open' or 'closed')
         return [i for i in self.get_issues() if i.state.value == state]
+    
+    def filter_by_label(self, issues_df: pd.DataFrame, keyword: str) -> pd.DataFrame:
+        # Returns a DataFrame of issues whose labels contain the keyword.
+        return issues_df[
+            issues_df['labels'].apply(lambda L: any(keyword in str(l).lower() for l in L))
+        ].copy()

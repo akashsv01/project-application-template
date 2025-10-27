@@ -42,6 +42,11 @@ class FeatureRunner:
             if fig2 is not None:
                 figs["graph2_top_feature_requesters"] = fig2
 
+            # ---------------- Graph 3: Docs Issues Analysis ----------------
+            fig3 = self.contributors_controller.plot_docs_issues(issues_df, events_df)
+            if fig3 is not None:
+                figs["graph3_docs_issues"] = fig3
+
             # Saving the figures in output path
             for name, fig in figs.items():
                 self.contributors_controller.visualizer.save_figure(fig, f"{output_path}/{name}.png")

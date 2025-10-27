@@ -43,4 +43,16 @@ class ContributorsController:
         )
         return fig
 
+    def plot_docs_issues(self, issues_df, events_df):
+        """Controller method for Graph 3: Documentation Issues (open vs closed per month).
+            Returns a figure with stacked bars for issue counts and a line showing the
+            average number of unique commenters per doc issue each month."""
+        status_counts, avg_commenters = self.analyzer.analyze_docs_issues(issues_df, events_df, self.data_loader)
+        if status_counts is None:
+            return None
+        return self.visualizer.create_docs_issues_chart(
+            status_counts,
+            avg_commenters,
+            "Docs Issues: Open vs Closed per Month with Avg Commenters"
+        )
 

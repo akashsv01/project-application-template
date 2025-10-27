@@ -60,6 +60,32 @@ class Visualizer:
         plt.tight_layout()
         return fig
 
+    def create_docs_issues_chart(self, status_counts, avg_commenters,
+                                 title="Docs Issues: Open vs Closed per Month with Avg Commenters"):
+        fig, ax1 = plt.subplots(figsize=(12, 6))
+        
+        # Plotting stacked bars: open issues on bottom, closed issues on top
+        ax1.bar(status_counts.index, status_counts['open'], width=20,
+                label='Open', color='skyblue')
+        ax1.bar(status_counts.index, status_counts['closed'], width=20,
+                bottom=status_counts['open'], label='Closed', color='lightgreen')
+        ax1.set_ylabel("Number of Doc Issues")
+        ax1.set_xlabel("Month")
+        ax1.set_title(title)
+        
+        # Adding a second y-axis for the line plot
+        ax2 = ax1.twinx()
+        
+        # Plotting the average number of unique commenters per doc issue per month
+        ax2.plot(avg_commenters.index, avg_commenters.values,
+                 color='red', marker='o', linewidth=2, label='Avg Unique Commenters')
+        ax2.set_ylabel("Avg Unique Commenters per Doc Issue")
+        
+        # Showing legends for both bar and line plots
+        ax1.legend(loc='upper left')
+        ax2.legend(loc='upper right')
+        plt.tight_layout()
+        return fig
 
     def save_figure(self, fig, filename):
         # A wrapper to save a matplotlib figure

@@ -93,3 +93,44 @@ class ContributorsAnalyzer:
         top_requesters = feature_issues['creator'].value_counts().head(top_n)
         return top_requesters, feature_issues
     
+    def compute_unique_commenters(self, events_df: pd.DataFrame, issues_df: pd.DataFrame) -> pd.DataFrame:
+        # Get unique commenters per issue per month
+        issue_numbers = issues_df['number'].unique()
+        comment_events = events_df[
+            (events_df['issue_number'].isin(issue_numbers)) &
+            (events_df['event_type'] == 'commented')
+        ].copy()
+
+        if comment_events.empty:
+            return pd.DataFrame(columns=['issue_number', 'month', 'n_unique_commenters'])
+
+        # Add month column
+        comment_events['month'] = comment_events['event_date'].dt.to_period('M')
+
+        # Counting distinct authors per (issue, month)
+        metrics = (
+            comment_events.groupby(['issue_number', 'month'])['event_author']
+            .nunique()
+            .reset_index(name='n_unique_commenters')
+        )
+        return metrics
+    
+    def analyze_docs_issues(self, issues_df, events_df, loader):
+        
+        # Filter documentation-related issues
+        docs_issues = loader.filter_by_label(issues_df, "doc")
+        if docs_issues.empty:
+            return None, None
+        
+        # Monthly open/closed counts
+        docs_issues['month'] = docs_issues['created_date'].dt.to_period('M')
+
+        status_counts = docs_issues.groupby(['month', 'state']).size().unstack(fill_value=0)
+        status_counts.index = status_counts.index.to_timestamp()
+
+        # Average unique commenters per doc issue per month
+        docs_metrics = self.compute_unique_commenters(events_df, docs_issues)
+        avg_commenters = docs_metrics.groupby('month')['n_unique_commenters'].mean()
+        avg_commenters.index = avg_commenters.index.to_timestamp()
+
+        return status_counts, avg_commenters
