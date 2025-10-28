@@ -3,7 +3,7 @@ from model import Contributor, Issue, Event
 from typing import List
 import numpy as np
 from utils.datetime_helper import extract_day_hour
-
+from datetime import timezone
 
 class ContributorsAnalyzer:
     def build_contributors(self, issues_df: pd.DataFrame, events_df: pd.DataFrame) -> List[Contributor]:
@@ -212,3 +212,61 @@ class ContributorsAnalyzer:
         days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
         hours = list(range(24))
         return pd.DataFrame(heatmap, index=days, columns=hours)
+
+    def analyze_lifecycle_stages(self, contributors, reference_date=None):
+        # Build a list of contributor records, ensuring each username is only included once
+        data = []
+        seen = set()
+        for c in contributors:
+            if c.username in seen:
+                continue
+            seen.add(c.username)
+            data.append({
+                "contributor": c.username,
+                "first_activity": c.first_activity,
+                "last_activity": c.last_activity
+            })
+            
+        # Creating a DataFrame and collapse duplicates by username
+        df = pd.DataFrame(data)
+        df = df.groupby("contributor", as_index=False).agg({
+            "first_activity": "min",
+            "last_activity": "max"
+        })
+
+
+        # If no reference_date provided, reference date would be the latest activity in the dataset
+        if reference_date is None:
+            all_dates = pd.concat([df["first_activity"].dropna(), df["last_activity"].dropna()])
+            reference_date = all_dates.max()  # dataset's "present"
+
+        # Ensuring reference_date is timezone-aware (UTC)
+        if reference_date.tzinfo is None:
+            reference_date = reference_date.replace(tzinfo=timezone.utc)
+
+        def assign_stage(row):
+            first, last = row["first_activity"], row["last_activity"]
+            # Normalize contributor timestamps to UTC
+            if first is not None and first.tzinfo is None:
+                first = first.replace(tzinfo=timezone.utc)
+            if last is not None and last.tzinfo is None:
+                last = last.replace(tzinfo=timezone.utc)
+            
+            # Stage assignment rules:
+            # - First activity within last 30 days → Newcomer
+            # - No recorded last activity or no activity in the last 6 months → Graduated Contributor
+            # - Active for more than a year (and still contributing) → Core Maintainer
+            # - Otherwise → Active
+            if last is None:
+                return "Graduated Contributor"
+            elif (reference_date - first).days <= 30:
+                return "Newcomer"
+            elif (reference_date - last).days > 180:
+                return "Graduated Contributor"
+            elif (reference_date - first).days > 365:
+                return "Core Maintainer"
+            else:
+                return "Active"
+
+        df["stage"] = df.apply(assign_stage, axis=1)
+        return df

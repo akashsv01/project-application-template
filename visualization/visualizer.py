@@ -196,6 +196,46 @@ class Visualizer:
         ax.set_ylabel("Day of Week")
         return fig
 
+    def create_lifecycle_chart(self, summary, latest_date=None):
+        # Plotting a Bar chart of lifecycle stage distribution with annotations
+        colors = {
+            "Newcomer": "skyblue",
+            "Active": "orange",
+            "Core Maintainer": "green",
+            "Graduated Contributor": "gray"   
+        }
+
+        # Stage definitions for the legend
+        stage_definitions = {
+            "Newcomer": "First activity within last 30 days",
+            "Active": "Contributed in ≥3 of last 6 months",
+            "Core Maintainer": "Consistently active >12 months",
+            "Graduated Contributor": "No activity in last 6+ months"
+        }
+
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        bars = ax.bar(summary.index, summary["count"],
+                      color=[colors.get(stage, "lightgray") for stage in summary.index])
+
+        # Annotating counts for each contributor type on top of each bar
+        for bar, stage in zip(bars, summary.index):
+            height = bar.get_height()
+            ax.text(bar.get_x() + bar.get_width()/2, height + (0.01 * summary["count"].max()),
+                    f"{int(height)}", ha="center", va="bottom", fontsize=10, fontweight="bold")
+
+        ax.set_ylabel("Contributors")
+
+        title = "Graph 7 - Contributor Lifecycle Stages"
+        if latest_date is not None:
+            title += f" (as of {latest_date.strftime('%b %Y')})"
+        ax.set_title(title)
+       
+        legend_handles = [plt.Rectangle((0,0),1,1, color=colors[stage]) for stage in summary.index]
+        legend_labels = [f"{stage}: {stage_definitions.get(stage, '')}" for stage in summary.index]
+        ax.legend(legend_handles, legend_labels, loc="upper right", frameon=True)
+
+        return fig
     
     def save_figure(self, fig, filename):
         # A wrapper to save matplotlib / plotly figures

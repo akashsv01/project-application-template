@@ -1,6 +1,7 @@
 from data_loader import DataLoader
 from analysis.contributors_analyzer import ContributorsAnalyzer
 from visualization.visualizer import Visualizer
+import pandas as pd
 
 class ContributorsController:
     def __init__(self):
@@ -104,6 +105,21 @@ class ContributorsController:
             print(f"  Total (Top 3) → {total_top3:.2f}% of {day}'s activity")
 
         fig = self.visualizer.create_engagement_heatmap_chart(heatmap_df)
+        return fig
+    
+    def run_contributor_lifecycle(self, contributors):
+        """Controller method for Graph 7: Contributor Lifecycle Stages
+        """
+        df = self.analyzer.analyze_lifecycle_stages(contributors)
+
+        # Counting how many contributors fall into each stage and calculate percentages
+        summary = df["stage"].value_counts().to_frame("count")
+        summary["%"] = summary["count"] / summary["count"].sum() * 100
+
+        # Finding the latest activity date across all contributors
+        latest_date = pd.concat([df["first_activity"].dropna(), df["last_activity"].dropna()]).max()
+
+        fig = self.visualizer.create_lifecycle_chart(summary, latest_date=latest_date)
         return fig
     
     

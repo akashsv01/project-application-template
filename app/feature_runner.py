@@ -63,6 +63,11 @@ class FeatureRunner:
             fig6 = self.contributors_controller.run_engagement_heatmap(contributors)
             if fig6 is not None:
                 figs["graph6_engagement_heatmap"] = fig6
+            
+            # ---------------- Graph 7: Contributor Lifecycle Stages ----------------
+            fig7 = self.contributors_controller.run_contributor_lifecycle(contributors)
+            if fig7 is not None:
+                figs["graph7_contributor_lifecycle"] = fig7
                 
             # Saving the figures in output path
             for name, fig in figs.items():
