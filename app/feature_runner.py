@@ -28,7 +28,7 @@ class FeatureRunner:
             output_path = self.config.get_output_path()
 
             issues_df, events_df = self.contributors_controller.load_contributor_data()
-            contributors_df = self.contributors_controller.analyzer.build_contributors(issues_df, events_df)
+            contributors = self.contributors_controller.analyzer.build_contributors(issues_df, events_df)
 
             figs = {}
             
@@ -46,6 +46,17 @@ class FeatureRunner:
             fig3 = self.contributors_controller.plot_docs_issues(issues_df, events_df)
             if fig3 is not None:
                 figs["graph3_docs_issues"] = fig3
+                
+            # ---------------- Graph 4: Issues Created per User ----------------
+            fig4 = self.contributors_controller.plot_issues_created_per_user(issues_df, top_n=40)
+            if fig4 is not None:
+                figs["graph4_issues_created_per_user"] = fig4
+            
+            fig5 = self.contributors_controller.plot_top_active_users_per_year(contributors, top_n=10)
+            if fig5 is not None:
+                # Interactive Plotly figure
+                figs["graph5_top_active_users_per_year"] = fig5
+                fig5.show()
 
             # Saving the figures in output path
             for name, fig in figs.items():

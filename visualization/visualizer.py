@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 class Visualizer:
     def create_bug_closure_distribution_chart(self, yearly_distribution, title: str):
@@ -87,7 +88,101 @@ class Visualizer:
         plt.tight_layout()
         return fig
 
+    def create_issues_created_per_user_chart(self, issues_per_user, all_counts, title="Top 40 Contributors by Issues Created"):
+
+        # Calculates the total number of issues across all contributors
+        total_issues = all_counts.sum()
+        
+        # Total issues created by the top 40 contributors
+        top40 = issues_per_user.head(40)
+        top40_total = issues_per_user.sum()
+        
+        # Percentage of all issues that the top 40 users account for
+        pct40 = (top40_total / total_issues) * 100
+
+        fig, ax = plt.subplots(figsize=(14, 7))
+
+        # Horizontal orientation for readability
+        top40.sort_values().plot(kind='barh', ax=ax, color='teal')
+
+        ax.set_xlabel("Number of Issues Created")
+        ax.set_ylabel("Contributor's username")
+
+        fig.suptitle(title, fontsize=16, y=0.98)
+
+        # Calculates what percentage of the overall issues that these top 40 contributors have created
+        fig.text(0.5, 0.12,
+         f"Top 40 contributors created {top40_total}/{total_issues} issues "
+         f"({pct40:.2f}%)",
+         ha='center', fontsize=12, color="gray")
+
+        # Annotate each bar with the count
+        for i, v in enumerate(top40.sort_values().values):
+            ax.text(v + 0.5, i, str(v), va='center')
+
+        plt.tight_layout(rect=[0, 0, 1, 0.9])  # leave space for title + subtitle
+        return fig
+        
+    def create_top_active_users_per_year_chart(self, yearly_data, top_n=10):
+        
+        # Sort years so that figures and dropdown menu are in chronological order
+        years = sorted(yearly_data.keys())
+        fig = go.Figure()
+
+        if not years:
+            # Edge case where there is no contributor activity at all
+            fig.update_layout(
+                title="No contributor activity data available",
+                xaxis_title="Activity",
+                yaxis_title="User",
+                height=400
+            )
+            return fig
+        
+        # Adding a bar trace for each year, only the first year is visible initially
+        for i, year in enumerate(years):
+            df_year = yearly_data[year].head(top_n)
+            fig.add_trace(go.Bar(
+                x=df_year["activity"],
+                y=df_year["user"],
+                orientation="h",
+                name=str(year),
+                visible=(i == 0),
+                marker_color="teal"
+            ))
+
+        # Dropdown menu so that we can switch between years
+        buttons = []
+        for i, year in enumerate(years):
+            visible = [False] * len(years)
+            visible[i] = True
+            buttons.append(dict(
+                label=str(year),
+                method="update",
+                args=[{"visible": visible},
+                    #   {"title": f"Top {top_n} Active Users in {year}"}]
+                    {"title": {"text": f"Top {top_n} Active Users in {year}"}}]
+            ))
+
+        fig.update_layout(
+            updatemenus=[dict(active=0, buttons=buttons, x=1.15, y=1.05)],
+            title={"text": f"Top {top_n} Active Users in {years[0]}"},
+            xaxis_title="Activity (Issues Created + Closed + Comments)",
+            yaxis_title="User",
+            height=600
+        )
+        return fig
+    
     def save_figure(self, fig, filename):
-        # A wrapper to save a matplotlib figure
-        fig.savefig(filename)
+        # A wrapper to save matplotlib / plotly figures
+        
+        # Matplotlib Figure
+        if hasattr(fig, "savefig"):
+            fig.savefig(filename, bbox_inches="tight")
+        
+        # Plotly Figure
+        elif hasattr(fig, "write_image"):
+            fig.write_image(filename)
+    
+    
         

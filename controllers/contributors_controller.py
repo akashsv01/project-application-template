@@ -55,4 +55,23 @@ class ContributorsController:
             avg_commenters,
             "Docs Issues: Open vs Closed per Month with Avg Commenters"
         )
+    
+    def plot_issues_created_per_user(self, issues_df, top_n=40):
+        """Controller method for Graph 4: Top 40 Contributors by Issues Created.
+           Returns a figure showing the top 40 users ranked by number of issues created."""
+        issues_per_user, all_counts = self.analyzer.analyze_issues_created_per_user(issues_df, top_n=top_n)
+        if issues_per_user is None:
+            return None
 
+        return self.visualizer.create_issues_created_per_user_chart(
+            issues_per_user,
+            all_counts,
+            f"Top {top_n} Contributors by Issues Created"
+        )
+
+    def plot_top_active_users_per_year(self, contributors, top_n=10):
+        """Controller method for Graph 5: Top Active Users per Year.
+        """
+        yearly_data = self.analyzer.analyze_top_active_users_per_year(contributors)
+
+        return self.visualizer.create_top_active_users_per_year_chart(yearly_data, top_n)

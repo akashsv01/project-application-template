@@ -1,43 +1,61 @@
 import pandas as pd
-from model import Contributor
+from model import Contributor, Issue, Event
+#Graph 5
+from typing import List
+import pandas as pd
 
 class ContributorsAnalyzer:
-    def build_contributors(self, issues_df: pd.DataFrame, events_df: pd.DataFrame) -> pd.DataFrame:
-        """
-        Build a contributors DataFrame from issues and events.
-        Each row = one contributor with activity stats.
-        """
-        contributors = {}
+    def build_contributors(self, issues_df: pd.DataFrame, events_df: pd.DataFrame) -> List[Contributor]:
+        IGNORED_USERS = {"stale[bot]", "github-actions[bot]"}
 
-        # Loop through issues and record who created them
+        # Ensure DataFrame date columns are parsed
+        issues_df["created_date"] = pd.to_datetime(issues_df["created_date"], errors="coerce")
+        if "closure_date" in issues_df.columns:
+            issues_df["closure_date"] = pd.to_datetime(issues_df["closure_date"], errors="coerce")
+        events_df["event_date"] = pd.to_datetime(events_df["event_date"], errors="coerce")
+
+        contributors_map: dict[str, Contributor] = {}
+
+        # Issues created
         for _, row in issues_df.iterrows():
-            creator = row["creator"]
-            if creator not in contributors:
-                contributors[creator] = Contributor(creator)
-            contributors[creator].issues_created.append(row["number"])
-
-        # Loop through events and record who commented/closed
-        for _, row in events_df.iterrows():
-            author = row["event_author"]
-            if not author:
+            username = row["creator"]
+            if username in IGNORED_USERS:
                 continue
-            if author not in contributors:
-                contributors[author] = Contributor(author)
-            contributors[author].comments.append(row["issue_number"])
+            if username not in contributors_map:
+                contributors_map[username] = Contributor(username=username)
 
-        # Flatten Contributor objects into a DataFrame
-        data = []
-        for username, c in contributors.items():
-            data.append({
-                "username": username,
-                "issues_created": len(c.issues_created),
-                "comments": len(c.comments),
-                "activity_count": c.get_activity_count(),
-                "first_activity": c.first_activity,
-                "last_activity": c.last_activity
-            })
+            issue_data = {
+                "number": str(row["number"]),
+                "creator": row["creator"],
+                "state": row["state"],
+                "created_date": row["created_date"].isoformat() if pd.notna(row["created_date"]) else None,
+                "updated_date": row["updated_date"].isoformat() if pd.notna(row["updated_date"]) else None,
+                "labels": row.get("labels", []),
+                "events": []  # events attached separately
+            }
+            issue = Issue(issue_data)
+            contributors_map[username].add_issue(issue)
 
-        return pd.DataFrame(data)
+        # Events (comments, labels, closures, etc.)
+        for _, row in events_df.iterrows():
+            username = row["event_author"]
+            if username in IGNORED_USERS:
+                continue
+            if username not in contributors_map:
+                contributors_map[username] = Contributor(username=username)
+
+            event_data = {
+                "event_type": row["event_type"],
+                "author": row["event_author"],
+                "event_date": row["event_date"].isoformat() if pd.notna(row["event_date"]) else None,
+                "label": row.get("label"),
+                "comment": row.get("comment")
+            }
+            event = Event(event_data)
+            contributors_map[username].add_comment(event)
+
+        return list(contributors_map.values())
+
 
     def analyze_bug_closure_distribution(self, issues_df, events_df) -> pd.DataFrame:
         # Filtering only issues labeled as bugs
@@ -134,3 +152,37 @@ class ContributorsAnalyzer:
         avg_commenters.index = avg_commenters.index.to_timestamp()
 
         return status_counts, avg_commenters
+    
+    def analyze_issues_created_per_user(self, issues_df, top_n=40):
+        if issues_df.empty:
+            return None
+        # Counts issues created per user for top_n users and overall counts
+        issues_per_user = issues_df['creator'].value_counts().head(top_n)
+        all_counts = issues_df['creator'].value_counts()
+        return (issues_per_user, all_counts)
+    
+    def analyze_top_active_users_per_year(self, contributors: List["Contributor"]):
+        result: dict[int, pd.DataFrame] = {}
+
+        # Gather all distinct years in which any contributor was active
+        all_years = set()
+        for c in contributors:
+            all_years.update(c.get_active_years())
+
+        # Computing activity counts for each year
+        for year in sorted(all_years):
+            rows = []
+            for c in contributors:
+                activity = c.get_activity_count_by_year(year)
+                if activity > 0:
+                    rows.append((c.username, activity))
+                    
+            # Only build a DataFrame if there is activity in that year
+            if rows:
+                df = pd.DataFrame(rows, columns=["user", "activity"])
+                df = df.sort_values("activity", ascending=False)
+                result[year] = df
+        
+        # Returns a mapping: year -> DataFrame of top users
+        return result
+

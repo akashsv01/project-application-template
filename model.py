@@ -127,6 +127,7 @@ class Contributor:
     def __init__(self, username: str):
         self.username = username
         self.issues_created: List[Issue] = []
+        self.issues_closed: List[Issue] = []
         self.comments: List[Event] = []
         self.first_activity: datetime = None
         self.last_activity: datetime = None
@@ -146,6 +147,57 @@ class Contributor:
             self.first_activity = date
         if not self.last_activity or date > self.last_activity:
             self.last_activity = date
+    
+    def add_closed_issue(self, issue: Issue):
+        closure_date = issue.get_closure_date()
+        if closure_date:
+            self.issues_closed.append(issue)
+            self._update_activity(closure_date)
 
     def get_activity_count(self) -> int:
-        return len(self.issues_created) + len(self.comments)
+        return (
+            len(self.issues_created)
+            + len(self.issues_closed)
+            + len(self.comments)
+        )
+
+    def get_activity_count_by_year(self, year: int) -> int:
+        # Returns this contributor's activity count for a specific year
+        # Activity = issues created + comments + issues closed in that year
+        count = 0
+        # Issues created
+        for issue in self.issues_created:
+            if issue.created_date and issue.created_date.year == year:
+                count += 1
+        # Comments
+        for comment in self.comments:
+            if comment.event_date and comment.event_date.year == year:
+                count += 1
+        # Issues closed
+        for issue in getattr(self, "issues_closed", []):
+            closure_date = issue.get_closure_date()
+            if closure_date and closure_date.year == year:
+                count += 1
+
+        return count
+
+    def get_active_years(self) -> set[int]:
+        
+        # Returns all years in which this contributor had any activity.
+        years = set()
+        years.update([i.created_date.year for i in self.issues_created if i.created_date])
+        years.update([e.event_date.year for e in self.comments if e.event_date])
+        years.update([
+            cd.year for i in getattr(self, "issues_closed", [])
+            for cd in [i.get_closure_date()] if cd
+        ])
+        return years
+
+class Comment:
+    def __init__(self, id: str, event_date=None, issue_id=None):
+        self.id = id
+        self.event_date = event_date
+        self.issue_id = issue_id
+
+    def __repr__(self):
+        return f"<Comment id={self.id} date={self.event_date}>"
