@@ -75,3 +75,41 @@ class ContributorsController:
         yearly_data = self.analyzer.analyze_top_active_users_per_year(contributors)
 
         return self.visualizer.create_top_active_users_per_year_chart(yearly_data, top_n)
+    
+    def run_engagement_heatmap(self, contributors):
+        """Controller method for Graph 6: Engagement Heatmap.
+           Analyzes contributor activity to produce a heatmap of engagement
+           across days of the week and hours of the day.
+        """
+        # rows = days of the week, columns = hours of the day, values = activity counts
+        heatmap_df = self.analyzer.analyze_engagement_heatmap(contributors)
+        
+        # Normalize each day's row so values represent percentages of that day's total activity
+        heatmap_norm = heatmap_df.div(heatmap_df.sum(axis=1), axis=0).fillna(0) * 100
+
+        # === Overall busiest hours across all days ===
+        print("\n=== Overall Busiest Hours (across all days) ===")
+        avg_by_hour = heatmap_norm.mean(axis=0).sort_values(ascending=False)
+        for hour, val in avg_by_hour.head(5).items():
+            print(f"Hour {hour:02d}: {val:.2f}% (average share of a day's activity)")
+
+        # === Top 3 Busy Hours per day ===
+        print("\n=== Top 3 Busy Hours Per Day ===")
+        for day in heatmap_norm.index:
+            top3 = heatmap_norm.loc[day].sort_values(ascending=False).head(3)
+            total_top3 = top3.sum()
+            print(f"\n{day}:")
+            for hour, val in top3.items():
+                print(f"  Hour {hour:02d} → {val:.2f}% of {day}'s activity")
+            print(f"  Total (Top 3) → {total_top3:.2f}% of {day}'s activity")
+
+        fig = self.visualizer.create_engagement_heatmap_chart(heatmap_df)
+        return fig
+    
+    
+
+
+
+
+
+

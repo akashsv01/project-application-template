@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
+import seaborn as sns
+import pandas as pd
+
 
 class Visualizer:
     def create_bug_closure_distribution_chart(self, yearly_distribution, title: str):
@@ -172,6 +175,27 @@ class Visualizer:
             height=600
         )
         return fig
+    
+    def create_engagement_heatmap_chart(self, heatmap_df: pd.DataFrame):
+        # Create a heatmap of contributor engagement by day of week and hour of the day
+        
+        heatmap_norm = heatmap_df.div(heatmap_df.sum(axis=1), axis=0).fillna(0) * 100
+
+        fig, ax = plt.subplots(figsize=(12, 6))
+        sns.heatmap(
+            heatmap_norm,
+            cmap="YlGnBu",
+            linewidths=0.5,
+            annot=True,
+            fmt=".1f",
+            cbar_kws={"label": "% of Day's Activity"},
+            ax=ax
+        )
+        ax.set_title("Contributor Engagement Heatmap")
+        ax.set_xlabel("Hour of Day")
+        ax.set_ylabel("Day of Week")
+        return fig
+
     
     def save_figure(self, fig, filename):
         # A wrapper to save matplotlib / plotly figures

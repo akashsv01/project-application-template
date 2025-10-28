@@ -1,8 +1,9 @@
 import pandas as pd
 from model import Contributor, Issue, Event
-#Graph 5
 from typing import List
-import pandas as pd
+import numpy as np
+from utils.datetime_helper import extract_day_hour
+
 
 class ContributorsAnalyzer:
     def build_contributors(self, issues_df: pd.DataFrame, events_df: pd.DataFrame) -> List[Contributor]:
@@ -185,4 +186,29 @@ class ContributorsAnalyzer:
         
         # Returns a mapping: year -> DataFrame of top users
         return result
+    
+    def analyze_engagement_heatmap(self, contributors: List["Contributor"]) -> pd.DataFrame:
+        # Initializing a 7(days) x 24(hours) matrix with zeros.
+        heatmap = np.zeros((7, 24), dtype=int)
+        
+        # Populating the heatmap with activity counts
+        for c in contributors:
+            # Issues created
+            for issue in c.issues_created:
+                coords = extract_day_hour(issue.created_date)
+                if coords:
+                    heatmap[coords] += 1
+            # Comments made
+            for event in c.comments:
+                coords = extract_day_hour(event.event_date)
+                if coords:
+                    heatmap[coords] += 1
+            # Issues closed
+            for issue in getattr(c, "issues_closed", []):
+                coords = extract_day_hour(issue.get_closure_date())
+                if coords:
+                    heatmap[coords] += 1
 
+        days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        hours = list(range(24))
+        return pd.DataFrame(heatmap, index=days, columns=hours)

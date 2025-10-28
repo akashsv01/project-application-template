@@ -52,12 +52,18 @@ class FeatureRunner:
             if fig4 is not None:
                 figs["graph4_issues_created_per_user"] = fig4
             
+            # ---------------- Graph 5: Top Active Users per Year ----------------
             fig5 = self.contributors_controller.plot_top_active_users_per_year(contributors, top_n=10)
             if fig5 is not None:
                 # Interactive Plotly figure
                 figs["graph5_top_active_users_per_year"] = fig5
                 fig5.show()
-
+            
+            # ---------------- Graph 6: Engagement Heatmap ----------------
+            fig6 = self.contributors_controller.run_engagement_heatmap(contributors)
+            if fig6 is not None:
+                figs["graph6_engagement_heatmap"] = fig6
+                
             # Saving the figures in output path
             for name, fig in figs.items():
                 self.contributors_controller.visualizer.save_figure(fig, f"{output_path}/{name}.png")
