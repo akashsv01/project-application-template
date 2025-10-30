@@ -1,18 +1,19 @@
 """
-Priority Controller
-Orchestrates the priority prediction workflow.
+Priority Controller (Updated with Visualization)
+Orchestrates the priority prediction workflow with visualizations.
 """
 
 import json
 import numpy as np
 from analysis.priority_analyzer import PriorityAnalyzer
+from analysis.priority_visualizer import PriorityVisualizer  # NEW IMPORT
 from model import IssuePredictionModel
 
 
 class PriorityController:
     """
     Controller for managing priority prediction workflow.
-    Coordinates between data, analysis, and ML models.
+    Coordinates between data, analysis, ML models, and visualizations.
     """
     
     def __init__(self, data_loader):
@@ -26,11 +27,12 @@ class PriorityController:
         self.issues = None
         self.analyzer = None
         self.model = None
-        self.raw_issues = None  # Store raw JSON for analyzer
+        self.raw_issues = None
+        self.visualizer = None  # NEW
         
     def execute_priority_workflow(self, output_file='improved_predictions.json'):
         """
-        Execute the complete priority prediction workflow.
+        Execute the complete priority prediction workflow with visualizations.
         
         Args:
             output_file (str): Output file path for predictions
@@ -43,7 +45,7 @@ class PriorityController:
         print("="*60)
         
         # Step 1: Load and analyze data
-        self.raw_issues = self.data_loader.load_json()  # Get raw JSON
+        self.raw_issues = self.data_loader.load_json()
         self.analyzer = PriorityAnalyzer(self.raw_issues)
         
         print(f"\n✓ Loaded {len(self.raw_issues)} issues")
@@ -60,7 +62,10 @@ class PriorityController:
         # Step 4: Predict for open issues
         predictions = self._predict_open_issues()
         
-        # Step 5: Save results
+        # Step 5: Generate visualizations (NEW)
+        self._generate_visualizations(predictions)
+        
+        # Step 6: Save results
         self._save_predictions(predictions, output_file)
         
         return predictions
@@ -110,27 +115,19 @@ class PriorityController:
             if i % 100 == 0:
                 print(f"  Processing {i}/{len(self.analyzer.closed_issues)}...", end='\r')
             
-            # Get resolution time (for urgency calculation)
             resolution_time = self.analyzer.get_resolution_time(issue)
             
             if resolution_time is None or resolution_time <= 0:
                 skipped_count += 1
                 continue
             
-            # Extract features
             features = self.analyzer.extract_features(issue)
-            
-            # Assign urgency
             urgency = self.analyzer.assign_urgency_category(issue, resolution_time)
-            
-            # Calculate complexity
             complexity = self.analyzer.calculate_complexity_score(issue)
             
-            # Store
             X_features.append(features)
             y_urgency.append(urgency)
             
-            # Metadata for similarity search
             metadata.append({
                 'number': issue['number'],
                 'title': issue['title'],
@@ -148,7 +145,6 @@ class PriorityController:
             print("\n✗ Error: No valid training data!")
             return
         
-        # Train the model
         self.model.train(X_features, y_urgency, metadata)
     
     def _predict_open_issues(self):
@@ -162,16 +158,10 @@ class PriorityController:
         print(f"\n✓ Generating predictions for {len(self.analyzer.open_issues)} open issues...")
         
         for issue in self.analyzer.open_issues:
-            # Extract features
             features = self.analyzer.extract_features(issue)
-            
-            # Calculate complexity
             complexity = self.analyzer.calculate_complexity_score(issue)
-            
-            # Predict (pass complexity score)
             prediction = self.model.predict(features, complexity) 
             
-            # Add issue metadata
             prediction.update({
                 'number': issue['number'],
                 'title': issue['title'],
@@ -182,7 +172,6 @@ class PriorityController:
             
             predictions.append(prediction)
         
-        # Sort by priority and complexity
         priority_rank = {'Critical': 4, 'High': 3, 'Medium': 2, 'Low': 1}
         predictions.sort(
             key=lambda x: (priority_rank.get(x['predicted_priority'], 0), 
@@ -190,7 +179,6 @@ class PriorityController:
             reverse=True
         )
         
-        # Display top issues
         self._display_top_predictions(predictions)
         
         return predictions
@@ -209,11 +197,29 @@ class PriorityController:
             print(f"   Current activity: {pred['num_comments']} comments")
             print(f"   URL: {pred['url']}")
     
+    def _generate_visualizations(self, predictions):
+        """
+        Generate and save visualizations (NEW METHOD).
+        
+        Args:
+            predictions (list): List of predictions
+        """
+        print("\n" + "="*60)
+        print("GENERATING VISUALIZATIONS")
+        print("="*60)
+        
+        self.visualizer = PriorityVisualizer(predictions)
+        
+        # Print summary statistics
+        self.visualizer.print_summary_statistics()
+        
+        # Create and save visualizations
+        self.visualizer.create_visualizations()
+    
     def _save_predictions(self, predictions, output_file):
         """Save predictions to JSON file."""
         import os
         
-        # Create output directory if it doesn't exist
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         
         with open(output_file, 'w', encoding='utf-8') as f:
