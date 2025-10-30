@@ -81,13 +81,13 @@ class PriorityAnalyzer:
         
         labels = [l.lower() for l in issue.get('labels', [])]
         
-        # Label-based urgency
+        # Label-based urgency (boosted for critical indicators)
         if any('critical' in l or 'blocker' in l or 'regression' in l for l in labels):
-            score += 4
+            score += 5  # Increased from 4
         if any('bug' in l or 'error' in l or 'crash' in l for l in labels):
-            score += 3
+            score += 4  # Increased from 3
         if any('security' in l or 'vulnerability' in l for l in labels):
-            score += 4
+            score += 5  # Increased from 4
             
         # Community engagement
         num_comments = len([e for e in issue.get('events', []) if e.get('event_type') == 'commented'])
@@ -120,10 +120,10 @@ class PriorityAnalyzer:
             elif days < 1:  # Emergency fix
                 score += 3
         
-        # Map to urgency levels
-        if score >= 12:
+        # Map to urgency levels (adjusted thresholds)
+        if score >= 10:
             return 'Critical'
-        elif score >= 8:
+        elif score >= 7:
             return 'High'
         elif score >= 4:
             return 'Medium'
@@ -240,7 +240,124 @@ class PriorityAnalyzer:
             'total': total
         }
     
+    def calculate_complexity_score(self, issue):
+        """
+        Calculate complexity score based on TECHNICAL factors only.
+        This is independent of priority/urgency.
+        
+        Factors:
+        - Code depth (length, structure)
+        - Technical indicators (stack traces, code blocks)
+        - Technical labels (not priority labels)
+        - Number of affected components
+        
+        Returns a score from 0-100 (higher = more technically complex)
+        """
+        score = 0
+        
+        body = issue.get('text') or ''
+        title = issue.get('title') or ''
+        labels = [l.lower() for l in issue.get('labels', [])]
+        
+        # 1. Text complexity and depth (0-30 points)
+        body_len = len(body)
+        if body_len > 3000:
+            score += 30
+        elif body_len > 2000:
+            score += 25
+        elif body_len > 1000:
+            score += 20
+        elif body_len > 500:
+            score += 15
+        elif body_len > 200:
+            score += 10
+        else:
+            score += 5
+        
+        # 2. Technical indicators (0-30 points)
+        code_blocks = body.count('```')
+        if code_blocks >= 4:
+            score += 20
+        elif code_blocks >= 2:
+            score += 15
+        elif code_blocks >= 1:
+            score += 10
+        
+        # Stack traces indicate technical depth
+        has_stack_trace = 'traceback' in body.lower() or 'error:' in body.lower() or 'exception' in body.lower()
+        if has_stack_trace:
+            score += 10
+        
+        # 3. Technical scope labels (0-25 points)
+        # These indicate technical complexity, not priority
+        technical_scope = [
+            'architecture', 'refactor', 'performance', 'compatibility',
+            'integration', 'dependency', 'api', 'breaking-change',
+            'typescript', 'build', 'ci', 'testing'
+        ]
+        scope_matches = sum(5 for label in labels if any(tech in label for tech in technical_scope))
+        score += min(scope_matches, 25)
+        
+        # 4. Multiple component involvement (0-15 points)
+        # Issues mentioning multiple technical components are more complex
+        components = ['plugin', 'installer', 'resolver', 'venv', 'lock', 'cache', 'config']
+        component_count = sum(1 for comp in components if comp in body.lower() or comp in title.lower())
+        if component_count >= 4:
+            score += 15
+        elif component_count >= 3:
+            score += 10
+        elif component_count >= 2:
+            score += 5
+        
+        return min(score, 100)  # Cap at 100
+    
     def get_resolution_statistics(self):
+        """
+        Calculate resolution time statistics.
+        
+        Returns:
+            dict: Statistics about resolution times
+        """
+        resolution_times = []
+        
+        for issue in self.closed_issues:
+            res_time = self.get_resolution_time(issue)
+            if res_time:
+                resolution_times.append(res_time)
+        
+        if not resolution_times:
+            return {}
+        
+        return {
+            'median_days': round(np.median(resolution_times) / 24, 1),
+            'mean_days': round(np.mean(resolution_times) / 24, 1),
+            'p75_days': round(np.percentile(resolution_times, 75) / 24, 1),
+            'p95_days': round(np.percentile(resolution_times, 95) / 24, 1),
+            'count': len(resolution_times)
+        }
+    
+    def get_urgency_statistics(self):
+        """
+        Calculate urgency distribution statistics for closed issues.
+        
+        Returns:
+            dict: Statistics about urgency categories
+        """
+        from collections import Counter
+        urgency_counts = Counter()
+        
+        for issue in self.closed_issues:
+            resolution_time = self.get_resolution_time(issue)
+            if resolution_time:
+                urgency = self.assign_urgency_category(issue, resolution_time)
+                urgency_counts[urgency] += 1
+        
+        total = sum(urgency_counts.values())
+        return {
+            'counts': dict(urgency_counts),
+            'percentages': {k: round(v/total*100, 1) for k, v in urgency_counts.items()} if total > 0 else {},
+            'total': total
+        }
         """
         Calculate resolution time statistics.
         

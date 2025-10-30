@@ -26,6 +26,7 @@ class PriorityController:
         self.issues = None
         self.analyzer = None
         self.model = None
+        self.raw_issues = None  # Store raw JSON for analyzer
         
     def execute_priority_workflow(self, output_file='improved_predictions.json'):
         """
@@ -42,10 +43,10 @@ class PriorityController:
         print("="*60)
         
         # Step 1: Load and analyze data
-        self.issues = self.data_loader.load_json()
-        self.analyzer = PriorityAnalyzer(self.issues)
+        self.raw_issues = self.data_loader.load_json()  # Get raw JSON
+        self.analyzer = PriorityAnalyzer(self.raw_issues)
         
-        print(f"\n✓ Loaded {len(self.issues)} issues")
+        print(f"\n✓ Loaded {len(self.raw_issues)} issues")
         print(f"  - Closed: {len(self.analyzer.closed_issues)}")
         print(f"  - Open: {len(self.analyzer.open_issues)}")
         
@@ -97,7 +98,6 @@ class PriorityController:
         print("="*60)
         
         X_features = []
-        y_time = []
         y_urgency = []
         metadata = []
         
@@ -110,7 +110,7 @@ class PriorityController:
             if i % 100 == 0:
                 print(f"  Processing {i}/{len(self.analyzer.closed_issues)}...", end='\r')
             
-            # Get resolution time
+            # Get resolution time (for urgency calculation)
             resolution_time = self.analyzer.get_resolution_time(issue)
             
             if resolution_time is None or resolution_time <= 0:
@@ -123,9 +123,11 @@ class PriorityController:
             # Assign urgency
             urgency = self.analyzer.assign_urgency_category(issue, resolution_time)
             
+            # Calculate complexity
+            complexity = self.analyzer.calculate_complexity_score(issue)
+            
             # Store
             X_features.append(features)
-            y_time.append(np.log1p(resolution_time))  # Log transform for better distribution
             y_urgency.append(urgency)
             
             # Metadata for similarity search
@@ -133,7 +135,7 @@ class PriorityController:
                 'number': issue['number'],
                 'title': issue['title'],
                 'url': issue['url'],
-                'resolution_days': round(resolution_time / 24, 1),
+                'complexity_score': complexity,
                 'urgency': urgency,
                 'labels': issue.get('labels', [])
             })
@@ -147,10 +149,10 @@ class PriorityController:
             return
         
         # Train the model
-        self.model.train(X_features, y_time, y_urgency, metadata)
+        self.model.train(X_features, y_urgency, metadata)
     
     def _predict_open_issues(self):
-        """Predict resolution time and urgency for open issues."""
+        """Predict priority and complexity for open issues."""
         print("\n" + "="*60)
         print("PREDICTING FOR OPEN ISSUES")
         print("="*60)
@@ -163,8 +165,11 @@ class PriorityController:
             # Extract features
             features = self.analyzer.extract_features(issue)
             
-            # Predict
-            prediction = self.model.predict(features)
+            # Calculate complexity
+            complexity = self.analyzer.calculate_complexity_score(issue)
+            
+            # Predict (pass complexity score)
+            prediction = self.model.predict(features, complexity) 
             
             # Add issue metadata
             prediction.update({
@@ -177,11 +182,11 @@ class PriorityController:
             
             predictions.append(prediction)
         
-        # Sort by urgency and resolution time
-        urgency_rank = {'Critical': 4, 'High': 3, 'Medium': 2, 'Low': 1}
+        # Sort by priority and complexity
+        priority_rank = {'Critical': 4, 'High': 3, 'Medium': 2, 'Low': 1}
         predictions.sort(
-            key=lambda x: (urgency_rank.get(x['predicted_urgency'], 0), 
-                          -x['predicted_resolution_days']), 
+            key=lambda x: (priority_rank.get(x['predicted_priority'], 0), 
+                          x['complexity_score']), 
             reverse=True
         )
         
@@ -193,14 +198,14 @@ class PriorityController:
     def _display_top_predictions(self, predictions, top_n=15):
         """Display top predictions."""
         print(f"\n✓ Predicted for {len(predictions)} open issues")
-        print(f"\nTop {top_n} Issues by Urgency:")
+        print(f"\nTop {top_n} Issues by Priority and Complexity:")
         print("-" * 60)
         
         for i, pred in enumerate(predictions[:top_n], 1):
-            print(f"\n{i}. [{pred['predicted_urgency']}] #{pred['number']}")
+            print(f"\n{i}. [{pred['predicted_priority']}] #{pred['number']}")
             print(f"   {pred['title'][:70]}")
-            print(f"   Estimated resolution: {pred['predicted_resolution_days']} days")
-            print(f"   Confidence: {pred['urgency_confidence']}%")
+            print(f"   Complexity Score: {pred['complexity_score']}/100")
+            print(f"   Confidence: {pred['priority_confidence']}%")
             print(f"   Current activity: {pred['num_comments']} comments")
             print(f"   URL: {pred['url']}")
     
@@ -215,58 +220,3 @@ class PriorityController:
             json.dump(predictions, f, indent=2, ensure_ascii=False)
         
         print(f"\n✓ Results saved to {output_file}")
-    
-    def predict_single_issue(self, issue_number):
-        """
-        Predict for a single issue and find similar issues.
-        
-        Args:
-            issue_number (int): Issue number
-            
-        Returns:
-            dict: Prediction with similar issues
-        """
-        # Find the issue
-        issue = next((i for i in self.analyzer.open_issues if i['number'] == issue_number), None)
-        
-        if issue is None:
-            print(f"✗ Issue #{issue_number} not found in open issues")
-            return None
-        
-        # Extract features
-        features = self.analyzer.extract_features(issue)
-        
-        # Predict
-        prediction = self.model.predict(features)
-        
-        # Find similar issues
-        similar = self.model.find_similar_issues(features['text'], top_k=5)
-        
-        # Combine results
-        result = {
-            'issue': {
-                'number': issue['number'],
-                'title': issue['title'],
-                'url': issue['url'],
-                'labels': issue.get('labels', [])
-            },
-            'prediction': prediction,
-            'similar_issues': similar
-        }
-        
-        # Display
-        print(f"\n{'='*60}")
-        print(f"PREDICTION FOR ISSUE #{issue_number}")
-        print('='*60)
-        print(f"\nTitle: {issue['title']}")
-        print(f"\nPredicted Resolution: {prediction['predicted_resolution_days']} days")
-        print(f"Predicted Urgency: {prediction['predicted_urgency']} ({prediction['urgency_confidence']}% confidence)")
-        
-        if similar:
-            print(f"\nSimilar Closed Issues:")
-            for s in similar:
-                print(f"  #{s['number']} (similarity: {s['similarity']})")
-                print(f"    {s['title'][:60]}")
-                print(f"    Resolved in: {s['resolution_days']} days | Urgency: {s['urgency']}")
-        
-        return result

@@ -9,10 +9,10 @@ from datetime import datetime, timedelta
 from dateutil import parser
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error, r2_score, classification_report
+from sklearn.metrics import classification_report
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
 
@@ -209,9 +209,10 @@ class Comment:
     def __repr__(self):
         return f"<Comment id={self.id} date={self.event_date}>"
     
+
 class IssuePredictionModel:
     """
-    ML Model for predicting issue resolution time and urgency.
+    ML Model for predicting issue priority and complexity.
     Combines text features (TF-IDF) with numeric features.
     """
     
@@ -220,8 +221,7 @@ class IssuePredictionModel:
         self.text_vectorizer = TfidfVectorizer(max_features=300, stop_words='english')
         self.scaler = StandardScaler()
         
-        # Models
-        self.time_model = RandomForestRegressor(n_estimators=200, random_state=42)
+        # Model for priority classification only
         self.urgency_model = RandomForestClassifier(
             n_estimators=200,
             class_weight='balanced',
@@ -277,14 +277,13 @@ class IssuePredictionModel:
         
         return X_combined, X_text_tfidf
     
-    def train(self, features_list, y_time, y_urgency, closed_issues_metadata):
+    def train(self, features_list, y_urgency, closed_issues_metadata):
         """
-        Train both time prediction and urgency classification models.
+        Train priority classification model.
         
         Args:
             features_list (list): List of feature dictionaries
-            y_time (list): Resolution times (in log scale)
-            y_urgency (list): Urgency categories
+            y_urgency (list): Priority categories
             closed_issues_metadata (list): Metadata for similarity search
             
         Returns:
@@ -298,34 +297,16 @@ class IssuePredictionModel:
         self.closed_issue_metadata = closed_issues_metadata
         
         # Split data
-        X_train, X_test, y_time_train, y_time_test, y_urg_train, y_urg_test = train_test_split(
-            X_combined, y_time, y_urgency, test_size=0.2, random_state=42
+        X_train, X_test, y_urg_train, y_urg_test = train_test_split(
+            X_combined, y_urgency, test_size=0.2, random_state=42
         )
         
-        # Train time prediction model
-        print("\n--- Training Time Prediction Model (Regression) ---")
-        self.time_model.fit(X_train, y_time_train)
-        y_time_pred = self.time_model.predict(X_test)
-        
-        # Convert back from log scale
-        actual_hours = np.expm1(y_time_test)
-        predicted_hours = np.expm1(y_time_pred)
-        
-        mae = mean_absolute_error(actual_hours, predicted_hours)
-        r2 = r2_score(actual_hours, predicted_hours)
-        median_error = np.median(np.abs(actual_hours - predicted_hours))
-        
-        print(f"✓ Time Prediction Performance:")
-        print(f"  Mean Absolute Error: {mae/24:.1f} days")
-        print(f"  R² Score: {r2:.3f}")
-        print(f"  Median Error: {median_error/24:.1f} days")
-        
-        # Train urgency classification model
-        print("\n--- Training Urgency Classification Model ---")
+        # Train priority classification model
+        print("\n--- Training Priority Classification Model ---")
         self.urgency_model.fit(X_train, y_urg_train)
         y_urg_pred = self.urgency_model.predict(X_test)
         
-        print(f"✓ Urgency Classification Performance:")
+        print(f"✓ Priority Classification Performance:")
         print(classification_report(y_urg_test, y_urg_pred, zero_division=0))
         
         # Feature importance
@@ -333,38 +314,32 @@ class IssuePredictionModel:
         
         # Store stats
         self.training_stats = {
-            'time_mae_days': round(mae / 24, 1),
-            'time_r2': round(r2, 3),
-            'time_median_error_days': round(median_error / 24, 1),
             'urgency_report': classification_report(y_urg_test, y_urg_pred, output_dict=True, zero_division=0)
         }
         
         return self.training_stats
     
-    def predict(self, features):
+    def predict(self, features, complexity_score):
         """
-        Predict resolution time and urgency for a single issue.
+        Predict priority for a single issue.
         
         Args:
             features (dict): Feature dictionary
+            complexity_score (int): Pre-calculated complexity score (0-100)
             
         Returns:
-            dict: Predictions (resolution_days, urgency, confidence)
+            dict: Predictions (priority, confidence, complexity)
         """
         X_combined, _ = self.prepare_feature_matrix([features], fit=False)
         
-        # Predict time
-        pred_time_log = self.time_model.predict(X_combined)[0]
-        pred_time_hours = np.expm1(pred_time_log)
-        
-        # Predict urgency
+        # Predict priority
         pred_urgency = self.urgency_model.predict(X_combined)[0]
         urgency_probs = self.urgency_model.predict_proba(X_combined)[0]
         
         return {
-            'predicted_resolution_days': round(pred_time_hours / 24, 1),
-            'predicted_urgency': pred_urgency,
-            'urgency_confidence': round(max(urgency_probs) * 100, 1)
+            'predicted_priority': pred_urgency,
+            'priority_confidence': round(max(urgency_probs) * 100, 1),
+            'complexity_score': complexity_score
         }
     
     def find_similar_issues(self, issue_text, top_k=5):
@@ -399,7 +374,7 @@ class IssuePredictionModel:
                     'title': meta['title'],
                     'url': meta['url'],
                     'similarity': round(similarities[idx], 3),
-                    'resolution_days': meta['resolution_days'],
+                    'complexity_score': meta['complexity_score'],
                     'urgency': meta['urgency'],
                     'labels': meta['labels']
                 })
