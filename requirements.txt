@@ -3,3 +3,6 @@ pandas
 matplotlib
 seaborn
 numpy
+scikit-learn>=1.0.0
+scipy>=1.7.0
+plotly>=5.0.0

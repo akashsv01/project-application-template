@@ -1,22 +1,40 @@
+"""
+Feature Runner
+Main entry point for running different analysis features.
+"""
+
 from config import ConfigManager
 from controllers.contributors_controller import ContributorsController
+from controllers.priority_controller import PriorityController
+from data_loader import DataLoader
+
 
 class FeatureRunner:
     def __init__(self):
         self.config = None
         self.contributors_controller = None
+        self.priority_controller = None
 
     def initialize_components(self):
-        # Initialize config and the ContributorsController
+        """Initialize config and controllers."""
+        # Initialize config
         self.config = ConfigManager("config.json")
+        
+        # Initialize ContributorsController
         self.contributors_controller = ContributorsController()
+        
+        # Initialize DataLoader (no arguments needed)
+        data_loader = DataLoader()
+        
+        # Initialize PriorityController with DataLoader
+        self.priority_controller = PriorityController(data_loader)
 
     def run_feature(self, feature_number: int, user: str = None, label: str = None):
         """
         Dispatch to the appropriate controller based on feature number.
         1 = Lifecycle Analysis
         2 = Contributors Dashboard
-        3 = Priority Analysis
+        3 = Priority Analysis (ML-based Priority Prediction)
         """
         if feature_number == 1:
             print("▶ Running Lifecycle Analysis...")
@@ -78,10 +96,20 @@ class FeatureRunner:
             import matplotlib.pyplot as plt
             plt.show()
 
-
         elif feature_number == 3:
-            print("▶ Running Priority Analysis...")
-            pass
+            print("▶ Running Priority Analysis (ML-based Priority Prediction)...")
+            
+            # Get output path from config
+            output_path = self.config.get_output_path()
+            output_file = f"{output_path}/priority_predictions.json"
+            
+            # Run the complete priority prediction workflow
+            predictions = self.priority_controller.execute_priority_workflow(output_file)
+            
+            print(f"\n✅ Priority analysis complete!")
+            print(f"📊 Predictions saved to: {output_file}")
+            
+            return predictions
 
         else:
             print("❌ Oops, this is an unknown feature number! Use --feature 1, 2, or 3.")
