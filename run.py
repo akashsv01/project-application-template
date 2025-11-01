@@ -1,13 +1,11 @@
-from app.feature_runner import FeatureRunner
-
 """
 Starting point of the application. This module is invoked from
 the command line to run the analyses.
 """
 
 import argparse
-
 import config
+from app.feature_runner import FeatureRunner
 from example_analysis import ExampleAnalysis
 
 
@@ -39,23 +37,32 @@ def parse_args():
 
 
 
+
+
 # Parse feature to call from command line arguments
 args = parse_args()
+
 # Add arguments to config so that they can be accessed in other parts of the application
 config.overwrite_from_args(args)
 
+# Initialize feature runner
 runner = FeatureRunner()
 runner.initialize_components()
 
-    
 # Run the feature specified in the --feature flag
 if args.feature == 0:
     ExampleAnalysis().run()
+
 elif args.feature == 1:
     runner.run_feature(1)
+
 elif args.feature == 2:
     runner.run_feature(2)
+
 elif args.feature == 3:
+    # Run priority prediction for all open issues
     runner.run_feature(3)
+
 else:
-    print('Need to specify which feature to run with --feature flag.')
+    print('❌ Need to specify which feature to run with --feature flag.')
+    print('Available features: 0 (example), 1 (lifecycle), 2 (contributors), 3 (priority)')

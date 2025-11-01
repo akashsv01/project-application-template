@@ -7,6 +7,14 @@ from typing import List
 from enum import Enum
 from datetime import datetime, timedelta
 from dateutil import parser
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+from sklearn.metrics.pairwise import cosine_similarity
+from scipy.sparse import hstack
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
@@ -456,3 +464,193 @@ class Comment:
 
     def __repr__(self):
         return f"<Comment id={self.id} date={self.event_date}>"
+    
+
+class IssuePredictionModel:
+    """
+    ML Model for predicting issue priority and complexity.
+    Combines text features (TF-IDF) with numeric features.
+    """
+    
+    def __init__(self):
+        """Initialize the prediction model with its components."""
+        self.text_vectorizer = TfidfVectorizer(max_features=300, stop_words='english')
+        self.scaler = StandardScaler()
+        
+        # Model for priority classification only
+        self.urgency_model = RandomForestClassifier(
+            n_estimators=200,
+            class_weight='balanced',
+            random_state=42
+        )
+        
+        # Store for similarity search
+        self.closed_issue_vectors = None
+        self.closed_issue_metadata = []
+        
+        # Training statistics
+        self.training_stats = {}
+        
+    def prepare_feature_matrix(self, features_list, fit=False):
+        """
+        Convert feature dictionaries to ML-ready matrix.
+        
+        Args:
+            features_list (list): List of feature dictionaries
+            fit (bool): Whether to fit the vectorizer/scaler
+            
+        Returns:
+            scipy.sparse matrix: Combined feature matrix
+        """
+        # Extract text
+        X_text = [feat['text'] for feat in features_list]
+        
+        # Extract numeric features
+        X_numeric = []
+        for feat in features_list:
+            X_numeric.append([
+                feat['title_len'], feat['body_len'], feat['num_code_blocks'],
+                feat['has_stack_trace'], feat['num_comments'], feat['num_events'],
+                feat['num_participants'], feat['num_labels'], feat['has_bug'],
+                feat['has_feature'], feat['has_docs'], feat['has_critical'],
+                feat['has_triage'], feat['first_response_hours']
+            ])
+        
+        # Transform text
+        if fit:
+            X_text_tfidf = self.text_vectorizer.fit_transform(X_text)
+        else:
+            X_text_tfidf = self.text_vectorizer.transform(X_text)
+        
+        # Scale numeric
+        if fit:
+            X_numeric_scaled = self.scaler.fit_transform(X_numeric)
+        else:
+            X_numeric_scaled = self.scaler.transform(X_numeric)
+        
+        # Combine
+        X_combined = hstack([X_text_tfidf, X_numeric_scaled])
+        
+        return X_combined, X_text_tfidf
+    
+    def train(self, features_list, y_urgency, closed_issues_metadata):
+        """
+        Train priority classification model.
+        
+        Args:
+            features_list (list): List of feature dictionaries
+            y_urgency (list): Priority categories
+            closed_issues_metadata (list): Metadata for similarity search
+            
+        Returns:
+            dict: Training statistics
+        """
+        print("\n✓ Preparing feature matrices...")
+        X_combined, X_text_tfidf = self.prepare_feature_matrix(features_list, fit=True)
+        
+        # Store for similarity search
+        self.closed_issue_vectors = X_text_tfidf
+        self.closed_issue_metadata = closed_issues_metadata
+        
+        # Split data
+        X_train, X_test, y_urg_train, y_urg_test = train_test_split(
+            X_combined, y_urgency, test_size=0.2, random_state=42
+        )
+        
+        # Train priority classification model
+        print("\n--- Training Priority Classification Model ---")
+        self.urgency_model.fit(X_train, y_urg_train)
+        y_urg_pred = self.urgency_model.predict(X_test)
+        
+        print(f"✓ Priority Classification Performance:")
+        print(classification_report(y_urg_test, y_urg_pred, zero_division=0))
+        
+        # Feature importance
+        self._print_feature_importance()
+        
+        # Store stats
+        self.training_stats = {
+            'urgency_report': classification_report(y_urg_test, y_urg_pred, output_dict=True, zero_division=0)
+        }
+        
+        return self.training_stats
+    
+    def predict(self, features, complexity_score):
+        """
+        Predict priority for a single issue.
+        
+        Args:
+            features (dict): Feature dictionary
+            complexity_score (int): Pre-calculated complexity score (0-100)
+            
+        Returns:
+            dict: Predictions (priority, confidence, complexity)
+        """
+        X_combined, _ = self.prepare_feature_matrix([features], fit=False)
+        
+        # Predict priority
+        pred_urgency = self.urgency_model.predict(X_combined)[0]
+        urgency_probs = self.urgency_model.predict_proba(X_combined)[0]
+        
+        return {
+            'predicted_priority': pred_urgency,
+            'priority_confidence': round(max(urgency_probs) * 100, 1),
+            'complexity_score': complexity_score
+        }
+    
+    def find_similar_issues(self, issue_text, top_k=5):
+        """
+        Find the most similar closed issues based on text content.
+        
+        Args:
+            issue_text (str): Combined title and body text
+            top_k (int): Number of similar issues to return
+            
+        Returns:
+            list: Similar issues with metadata
+        """
+        if self.closed_issue_vectors is None or len(self.closed_issue_metadata) == 0:
+            return []
+        
+        # Vectorize the new issue
+        issue_vector = self.text_vectorizer.transform([issue_text])
+        
+        # Calculate cosine similarity
+        similarities = cosine_similarity(issue_vector, self.closed_issue_vectors)[0]
+        
+        # Get top K
+        top_indices = np.argsort(similarities)[-top_k:][::-1]
+        
+        similar_issues = []
+        for idx in top_indices:
+            if idx < len(self.closed_issue_metadata):
+                meta = self.closed_issue_metadata[idx]
+                similar_issues.append({
+                    'number': meta['number'],
+                    'title': meta['title'],
+                    'url': meta['url'],
+                    'similarity': round(similarities[idx], 3),
+                    'complexity_score': meta['complexity_score'],
+                    'urgency': meta['urgency'],
+                    'labels': meta['labels']
+                })
+        
+        return similar_issues
+    
+    def _print_feature_importance(self):
+        """Print top 10 most important features."""
+        print("\n--- Top 10 Most Important Features ---")
+        
+        feature_names = (
+            self.text_vectorizer.get_feature_names_out().tolist() + 
+            ['title_len', 'body_len', 'num_code_blocks', 'has_stack_trace',
+             'num_comments', 'num_events', 'num_participants', 'num_labels',
+             'has_bug', 'has_feature', 'has_docs', 'has_critical', 'has_triage',
+             'first_response_hours']
+        )
+        
+        importances = self.urgency_model.feature_importances_
+        indices = np.argsort(importances)[-10:]
+        
+        for idx in reversed(indices):
+            print(f"  {feature_names[idx]}: {importances[idx]:.4f}")
