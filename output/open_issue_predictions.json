@@ -1,0 +1,4594 @@
+[
+  {
+    "issue_number": 9183,
+    "title": "Document `platform` and `python` shorthands for long-form dependencies",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 0.75,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 193.35
+    },
+    "created_at": "2024-03-19 21:21:49+00:00"
+  },
+  {
+    "issue_number": 9146,
+    "title": "Dependency constraints missing documentation",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 4.37,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 196.98
+    },
+    "created_at": "2024-03-13 15:55:13+00:00"
+  },
+  {
+    "issue_number": 7643,
+    "title": "Add editable not working on Win11 Python3.11",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/windows",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 21.54,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 214.14
+    },
+    "created_at": "2023-03-13 16:22:19+00:00"
+  },
+  {
+    "issue_number": 7610,
+    "title": "Poetry self update fails on Windows with Access Denied, leaving poetry in a brok",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 21.54,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 214.14
+    },
+    "created_at": "2023-03-06 02:20:25+00:00"
+  },
+  {
+    "issue_number": 9644,
+    "title": "currupted version of pip/setuptools/virtualenv in cache",
+    "labels": [
+      "area/docs"
+    ],
+    "predicted_resolution_days": 25.66,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 218.26
+    },
+    "created_at": "2024-08-20 13:38:38+00:00"
+  },
+  {
+    "issue_number": 2740,
+    "title": "Stabilize 'build.py'",
+    "labels": [
+      "area/docs/faq"
+    ],
+    "predicted_resolution_days": 26.43,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 219.03
+    },
+    "created_at": "2020-07-28 13:54:45+00:00"
+  },
+  {
+    "issue_number": 4097,
+    "title": "Could we strictly install from a poetry.lock file?",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 29.12,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 221.73
+    },
+    "created_at": "2021-05-24 20:30:29+00:00"
+  },
+  {
+    "issue_number": 4055,
+    "title": "Option to force Poetry to create a virtual environment, even if a virtual env is",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 29.12,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 221.73
+    },
+    "created_at": "2021-05-10 14:16:01+00:00"
+  },
+  {
+    "issue_number": 8279,
+    "title": "Feature request: activate extras in group dependencies",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 31.08,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 223.69
+    },
+    "created_at": "2023-08-07 16:23:24+00:00"
+  },
+  {
+    "issue_number": 9608,
+    "title": "No information on console-scripts `type` option",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 39.78,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 232.39
+    },
+    "created_at": "2024-08-06 21:24:51+00:00"
+  },
+  {
+    "issue_number": 9574,
+    "title": "Setting extras as non-optional",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 40.34,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 232.95
+    },
+    "created_at": "2024-07-23 15:49:14+00:00"
+  },
+  {
+    "issue_number": 6799,
+    "title": "Poetry ignoring credentials in source url?",
+    "labels": [
+      "kind/question"
+    ],
+    "predicted_resolution_days": 41.15,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 233.76
+    },
+    "created_at": "2022-10-14 08:21:54+00:00"
+  },
+  {
+    "issue_number": 8403,
+    "title": "Projects with extension modules and requirements from private repository no long",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 50.58,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 243.19
+    },
+    "created_at": "2023-09-04 17:02:14+00:00"
+  },
+  {
+    "issue_number": 9522,
+    "title": "Handling Platform-Specific Dependency Conflicts in Poetry",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 52.93,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 245.54
+    },
+    "created_at": "2024-07-01 18:49:33+00:00"
+  },
+  {
+    "issue_number": 879,
+    "title": "poetry version prepatch doesn't work",
+    "labels": [
+      "kind/bug",
+      "status/needs-consensus"
+    ],
+    "predicted_resolution_days": 58.42,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 251.02
+    },
+    "created_at": "2019-02-10 16:22:46+00:00"
+  },
+  {
+    "issue_number": 6409,
+    "title": "Instructions for installing PyTorch",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 61.63,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 254.23
+    },
+    "created_at": "2022-09-05 08:59:06+00:00"
+  },
+  {
+    "issue_number": 9393,
+    "title": "`poetry install` run under pre-commit hook does not apply changes.",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 64.57,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 257.18
+    },
+    "created_at": "2024-05-06 14:52:56+00:00"
+  },
+  {
+    "issue_number": 707,
+    "title": "Poetry `add` and `init` can create incompatible settings in pyproject.toml",
+    "labels": [
+      "kind/bug",
+      "area/init"
+    ],
+    "predicted_resolution_days": 66.2,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 258.81
+    },
+    "created_at": "2018-12-06 13:12:11+00:00"
+  },
+  {
+    "issue_number": 9711,
+    "title": "installing dep from commit or branch hallucinates",
+    "labels": [
+      "kind/bug",
+      "status/needs-reproduction"
+    ],
+    "predicted_resolution_days": 70.9,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 263.51
+    },
+    "created_at": "2024-09-26 07:10:50+00:00"
+  },
+  {
+    "issue_number": 8418,
+    "title": "Wildcard version constraint not functioning as expected",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 70.9,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 263.51
+    },
+    "created_at": "2023-09-07 17:17:27+00:00"
+  },
+  {
+    "issue_number": 4174,
+    "title": "File created by custom build script is missing from the wheel",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 71.66,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 264.27
+    },
+    "created_at": "2021-06-11 10:41:22+00:00"
+  },
+  {
+    "issue_number": 9368,
+    "title": "Enable `poetry version postrelease` to create version numbers like 1.0.0post1",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 75.29,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 267.9
+    },
+    "created_at": "2024-05-01 22:25:47+00:00"
+  },
+  {
+    "issue_number": 7940,
+    "title": "Add support for publishing to PyPI with a trusted publisher",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 75.29,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 267.9
+    },
+    "created_at": "2023-05-17 15:17:15+00:00"
+  },
+  {
+    "issue_number": 2412,
+    "title": "Install from git may be slow when cloning huge repository",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 75.29,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 267.9
+    },
+    "created_at": "2020-05-13 08:37:44+00:00"
+  },
+  {
+    "issue_number": 8405,
+    "title": "`assert term is not None` in poetry lock/update",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "area/error-handling",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 77.14,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 269.75
+    },
+    "created_at": "2023-09-05 09:40:23+00:00"
+  },
+  {
+    "issue_number": 6445,
+    "title": "Provide more information regarding --no-cache flag",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 80.52,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 273.12
+    },
+    "created_at": "2022-09-08 01:51:31+00:00"
+  },
+  {
+    "issue_number": 9725,
+    "title": "discrepancy between lock content for different Mx processors",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "status/needs-reproduction"
+    ],
+    "predicted_resolution_days": 81.48,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 274.09
+    },
+    "created_at": "2024-09-30 08:39:39+00:00"
+  },
+  {
+    "issue_number": 8159,
+    "title": "No such file or directory due to race condition",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 84.85,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 277.46
+    },
+    "created_at": "2023-07-06 10:46:08+00:00"
+  },
+  {
+    "issue_number": 9369,
+    "title": "Ignore \"develop = true\"",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 85.0,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 277.6
+    },
+    "created_at": "2024-05-02 11:11:56+00:00"
+  },
+  {
+    "issue_number": 6151,
+    "title": "\u201cpoetry cache clear\u201d failed to remove corrupted artifacts",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 93.07,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 285.68
+    },
+    "created_at": "2022-08-11 12:20:04+00:00"
+  },
+  {
+    "issue_number": 9012,
+    "title": "Improvement of Documentation for Running Scripts with Poetry",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 94.91,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 287.51
+    },
+    "created_at": "2024-02-24 21:39:08+00:00"
+  },
+  {
+    "issue_number": 4289,
+    "title": "Cannot install package with shell script in `[tool.poetry.scripts]`",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 94.96,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 287.57
+    },
+    "created_at": "2021-07-16 14:08:21+00:00"
+  },
+  {
+    "issue_number": 3827,
+    "title": "Have the `poetry show --outdated` result reflected in its exit code for automati",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "status/needs-consensus",
+      "area/show"
+    ],
+    "predicted_resolution_days": 95.46,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 288.07
+    },
+    "created_at": "2021-03-23 12:26:24+00:00"
+  },
+  {
+    "issue_number": 6390,
+    "title": "What does it actually mean to install a git dependency in editable mode?",
+    "labels": [
+      "area/docs",
+      "kind/question"
+    ],
+    "predicted_resolution_days": 101.06,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 293.66
+    },
+    "created_at": "2022-09-03 21:46:05+00:00"
+  },
+  {
+    "issue_number": 8271,
+    "title": "Tensorflow 2.13.0 cannot be imported after install",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "status/external-issue"
+    ],
+    "predicted_resolution_days": 105.21,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 297.81
+    },
+    "created_at": "2023-08-04 12:39:50+00:00"
+  },
+  {
+    "issue_number": 9466,
+    "title": "the latest Poetry, Cannot recognize the new version of Python",
+    "labels": [
+      "kind/bug",
+      "status/waiting-on-response"
+    ],
+    "predicted_resolution_days": 105.52,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 298.12
+    },
+    "created_at": "2024-06-02 01:05:37+00:00"
+  },
+  {
+    "issue_number": 5893,
+    "title": "Multiple private packages from GitHub using GitHub Deploy Keys",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 107.97,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 300.58
+    },
+    "created_at": "2022-06-22 13:07:36+00:00"
+  },
+  {
+    "issue_number": 4345,
+    "title": "`poetry plugin show` crash with obscure error message",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 113.15,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 305.76
+    },
+    "created_at": "2021-08-02 13:46:31+00:00"
+  },
+  {
+    "issue_number": 7592,
+    "title": "Unable to debug with Debugpy",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 113.3,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 305.91
+    },
+    "created_at": "2023-03-02 17:27:24+00:00"
+  },
+  {
+    "issue_number": 7669,
+    "title": "Support reading metadata from PEP 621 compliant pyproject.toml",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 114.26,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 306.87
+    },
+    "created_at": "2023-03-17 17:50:26+00:00"
+  },
+  {
+    "issue_number": 4299,
+    "title": "Make version in `pyproject.toml` optional, or at least validate it *after* the p",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 115.44,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 308.05
+    },
+    "created_at": "2021-07-21 13:11:07+00:00"
+  },
+  {
+    "issue_number": 9634,
+    "title": "Poetry forgetting some dependencies (mix of extras, groups and version markers)",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 116.34,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 308.95
+    },
+    "created_at": "2024-08-16 14:12:40+00:00"
+  },
+  {
+    "issue_number": 5526,
+    "title": "Mixing POETRY_HTTP_BASIC_  env vars with CLI args does not work on poetry publis",
+    "labels": [
+      "kind/bug"
+    ],
+    "predicted_resolution_days": 118.16,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 310.77
+    },
+    "created_at": "2022-05-01 11:11:37+00:00"
+  },
+  {
+    "issue_number": 9436,
+    "title": "Error: Invalid source \"pypi\" referenced in dependencies.",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 120.35,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 312.95
+    },
+    "created_at": "2024-05-23 13:47:25+00:00"
+  },
+  {
+    "issue_number": 8194,
+    "title": "`poetry update` seems to ignore pre-release preferences and install pre-releases",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 122.97,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 315.57
+    },
+    "created_at": "2023-07-13 14:18:45+00:00"
+  },
+  {
+    "issue_number": 9147,
+    "title": "Inject local dependency version during publish/build",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 123.35,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 315.96
+    },
+    "created_at": "2024-03-13 16:45:54+00:00"
+  },
+  {
+    "issue_number": 9462,
+    "title": "Add flag to `poetry add` to allow the installation of the latest compatible vers",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 123.92,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 316.52
+    },
+    "created_at": "2024-05-31 22:37:22+00:00"
+  },
+  {
+    "issue_number": 9485,
+    "title": "(\ud83d\udc1e) Confusing error message in `poetry show` with outdated lock file",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 124.42,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 317.02
+    },
+    "created_at": "2024-06-13 06:55:09+00:00"
+  },
+  {
+    "issue_number": 9474,
+    "title": "Relative dependency imports work in some folders but not others.",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 124.42,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 317.02
+    },
+    "created_at": "2024-06-06 01:09:19+00:00"
+  },
+  {
+    "issue_number": 8079,
+    "title": "Custom Virtual Env Name Not used",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 124.42,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 317.02
+    },
+    "created_at": "2023-06-08 23:35:17+00:00"
+  },
+  {
+    "issue_number": 8077,
+    "title": "poetry run --directory command line help error",
+    "labels": [
+      "kind/bug",
+      "area/cli",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 124.42,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 317.02
+    },
+    "created_at": "2023-06-08 20:22:41+00:00"
+  },
+  {
+    "issue_number": 9627,
+    "title": "Prompt for git credentials when trying to install package from private repositor",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 124.92,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 317.52
+    },
+    "created_at": "2024-08-15 02:19:44+00:00"
+  },
+  {
+    "issue_number": 6152,
+    "title": "Signal when cached dependency is used during installation",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 124.92,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 317.52
+    },
+    "created_at": "2022-08-11 22:31:55+00:00"
+  },
+  {
+    "issue_number": 3503,
+    "title": "Using `@latest` should not change the constraint pattern",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 126.21,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 318.82
+    },
+    "created_at": "2020-12-20 14:00:11+00:00"
+  },
+  {
+    "issue_number": 9774,
+    "title": "poetry ignores dependencies of dependencies which are \"ambient\" (installed in cu",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 126.53,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 319.13
+    },
+    "created_at": "2024-10-17 10:06:21+00:00"
+  },
+  {
+    "issue_number": 9779,
+    "title": "Poetry ignores the Python version specified in the pyproject.toml file",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 127.91,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 320.52
+    },
+    "created_at": "2024-10-17 17:05:57+00:00"
+  },
+  {
+    "issue_number": 9778,
+    "title": "Cannot install <random lib>",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 127.91,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 320.52
+    },
+    "created_at": "2024-10-17 15:33:12+00:00"
+  },
+  {
+    "issue_number": 9140,
+    "title": "Allow creation of \"pre-install\" script",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 127.99,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 320.6
+    },
+    "created_at": "2024-03-11 15:38:02+00:00"
+  },
+  {
+    "issue_number": 1328,
+    "title": "Period(s) in repository \"name\" causes issues",
+    "labels": [
+      "kind/bug",
+      "good first issue"
+    ],
+    "predicted_resolution_days": 128.6,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 321.2
+    },
+    "created_at": "2019-08-25 14:58:05+00:00"
+  },
+  {
+    "issue_number": 9780,
+    "title": "Unable to install PyTorch version 2.5.0 with CUDA 12.4 with Python 3.12.6 on Fed",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 131.54,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 324.15
+    },
+    "created_at": "2024-10-18 12:23:24+00:00"
+  },
+  {
+    "issue_number": 6857,
+    "title": "Invalid author prevents package from being installed",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 131.54,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 324.15
+    },
+    "created_at": "2022-10-21 07:42:09+00:00"
+  },
+  {
+    "issue_number": 5138,
+    "title": "Poetry debugging with PyCharm not possible?",
+    "labels": [
+      "status/external-issue"
+    ],
+    "predicted_resolution_days": 131.68,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 324.29
+    },
+    "created_at": "2022-02-01 22:28:16+00:00"
+  },
+  {
+    "issue_number": 7545,
+    "title": "Poetry 1.3.2 cannot obtain credentials via keyrings",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 132.53,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 325.14
+    },
+    "created_at": "2023-02-23 07:56:24+00:00"
+  },
+  {
+    "issue_number": 3643,
+    "title": "tool.poetry.scripts fails because of a space in path to env",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 132.53,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 325.14
+    },
+    "created_at": "2021-02-04 12:21:27+00:00"
+  },
+  {
+    "issue_number": 8535,
+    "title": "Poetry is taking first wheel metadata only and thus fails to find package",
+    "labels": [],
+    "predicted_resolution_days": 133.58,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 326.18
+    },
+    "created_at": "2023-10-13 12:54:40+00:00"
+  },
+  {
+    "issue_number": 2117,
+    "title": "poetry env use X.Y fails on Windows",
+    "labels": [
+      "kind/bug"
+    ],
+    "predicted_resolution_days": 133.82,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 326.43
+    },
+    "created_at": "2020-03-02 13:43:24+00:00"
+  },
+  {
+    "issue_number": 9694,
+    "title": "Auth in Gitlab to the Gitlab hosted package repository does not work correctly",
+    "labels": [
+      "kind/bug",
+      "area/publishing",
+      "status/triage",
+      "area/auth"
+    ],
+    "predicted_resolution_days": 134.57,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 327.18
+    },
+    "created_at": "2024-09-18 22:22:47+00:00"
+  },
+  {
+    "issue_number": 9682,
+    "title": "Cannot install Monorepo deps without sourcecode for Dockerfile caching",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 134.57,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 327.18
+    },
+    "created_at": "2024-09-11 19:30:47+00:00"
+  },
+  {
+    "issue_number": 2880,
+    "title": "poetry show -o / poetry show -l output loses expected functionality if line over",
+    "labels": [
+      "kind/bug",
+      "area/cli",
+      "area/ux",
+      "area/show"
+    ],
+    "predicted_resolution_days": 134.57,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 327.18
+    },
+    "created_at": "2020-09-02 17:39:41+00:00"
+  },
+  {
+    "issue_number": 8919,
+    "title": "repository source should support a file system link to a index file like pip's -",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 135.14,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 327.75
+    },
+    "created_at": "2024-01-29 12:54:19+00:00"
+  },
+  {
+    "issue_number": 9717,
+    "title": "Certificates configuration to install packages with git+https from a company-hos",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 137.52,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 330.13
+    },
+    "created_at": "2024-09-27 15:05:03+00:00"
+  },
+  {
+    "issue_number": 9684,
+    "title": "Poetry Virtual environment breaks shared namespaces",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 137.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 330.35
+    },
+    "created_at": "2024-09-12 16:53:18+00:00"
+  },
+  {
+    "issue_number": 8415,
+    "title": "Repeated optional (extras) dependencies fail to resolve with poetry 1.6.1",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 137.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 330.35
+    },
+    "created_at": "2023-09-07 09:39:11+00:00"
+  },
+  {
+    "issue_number": 9069,
+    "title": "Integrate SLSA into poetry",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 139.01,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 331.61
+    },
+    "created_at": "2024-02-29 06:42:58+00:00"
+  },
+  {
+    "issue_number": 9707,
+    "title": "Document the workaround of \"ModuleNotFoundError\" when setup.py depends on custom",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 141.35,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 333.95
+    },
+    "created_at": "2024-09-24 11:03:03+00:00"
+  },
+  {
+    "issue_number": 9680,
+    "title": "Implement a `poetry report <command>` command or something similar for when fili",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 141.35,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 333.95
+    },
+    "created_at": "2024-09-10 01:17:40+00:00"
+  },
+  {
+    "issue_number": 9668,
+    "title": "Add support for app/library type to `poetry new` and `poetry init`",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 141.35,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 333.95
+    },
+    "created_at": "2024-09-03 13:22:51+00:00"
+  },
+  {
+    "issue_number": 2134,
+    "title": "A more script-friendly version of the show command that can be parsed",
+    "labels": [
+      "area/cli",
+      "kind/feature",
+      "area/show"
+    ],
+    "predicted_resolution_days": 142.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 335.34
+    },
+    "created_at": "2020-03-05 23:51:25+00:00"
+  },
+  {
+    "issue_number": 5441,
+    "title": "Exclude does not work for binary artifacts",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 147.11,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 339.71
+    },
+    "created_at": "2022-04-12 12:11:22+00:00"
+  },
+  {
+    "issue_number": 4000,
+    "title": "Package dependencies not installed when private PyPi repository present",
+    "labels": [
+      "kind/bug",
+      "status/needs-reproduction"
+    ],
+    "predicted_resolution_days": 147.11,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 339.71
+    },
+    "created_at": "2021-04-27 16:01:05+00:00"
+  },
+  {
+    "issue_number": 9472,
+    "title": "Add support for keyring as a subprocess subprocess (rather than keyring as an im",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 148.72,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 341.32
+    },
+    "created_at": "2024-06-05 01:41:33+00:00"
+  },
+  {
+    "issue_number": 8131,
+    "title": "\"Basic Usage\" guide may include specific instructions for existing poetry projec",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 149.4,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 342.0
+    },
+    "created_at": "2023-06-25 08:34:24+00:00"
+  },
+  {
+    "issue_number": 8507,
+    "title": "Python version change when building from wheel",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 153.28,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 345.89
+    },
+    "created_at": "2023-10-04 14:29:37+00:00"
+  },
+  {
+    "issue_number": 6837,
+    "title": "shebang for tool.poetry.scripts gets too long for scripts created for venv",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 153.28,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 345.89
+    },
+    "created_at": "2022-10-19 13:04:11+00:00"
+  },
+  {
+    "issue_number": 4659,
+    "title": "Additional source is being ignored while inheriting dependencies",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 153.28,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 345.89
+    },
+    "created_at": "2021-10-20 11:48:46+00:00"
+  },
+  {
+    "issue_number": 9488,
+    "title": "Files cannot be accessed when outside of the directory that pyproject.toml resid",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 154.02,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 346.63
+    },
+    "created_at": "2024-06-14 04:36:05+00:00"
+  },
+  {
+    "issue_number": 8581,
+    "title": "group-specific updates to extras work: unintended, or undocumented?",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 154.16,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 346.77
+    },
+    "created_at": "2023-10-27 09:12:47+00:00"
+  },
+  {
+    "issue_number": 9675,
+    "title": "Doc Question",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 155.01,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 347.62
+    },
+    "created_at": "2024-09-08 02:00:14+00:00"
+  },
+  {
+    "issue_number": 9537,
+    "title": "Poetry lock does  not include explicit sources for conditional packages",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 155.16,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 347.77
+    },
+    "created_at": "2024-07-08 13:46:32+00:00"
+  },
+  {
+    "issue_number": 9524,
+    "title": "Poetry + explicit source can't find installation candidates while pip with --ind",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 155.16,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 347.77
+    },
+    "created_at": "2024-07-01 22:17:40+00:00"
+  },
+  {
+    "issue_number": 8229,
+    "title": "[WinError 193] when `virtualenvs.prefer-active-python` is `true`",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 155.16,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 347.77
+    },
+    "created_at": "2023-07-24 09:34:35+00:00"
+  },
+  {
+    "issue_number": 8201,
+    "title": "Publishing to a private repository fails when keyring is not available",
+    "labels": [
+      "kind/bug",
+      "area/publishing",
+      "status/triage",
+      "area/auth"
+    ],
+    "predicted_resolution_days": 155.16,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 347.77
+    },
+    "created_at": "2023-07-17 09:17:59+00:00"
+  },
+  {
+    "issue_number": 4103,
+    "title": "Priority of .egg-info, .dist-info, and setup.py",
+    "labels": [
+      "area/solver",
+      "status/needs-consensus"
+    ],
+    "predicted_resolution_days": 155.64,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 348.24
+    },
+    "created_at": "2021-05-25 18:09:02+00:00"
+  },
+  {
+    "issue_number": 9510,
+    "title": "Missing documentation for `type = \"file\"` under `tool.poetry.scripts` ",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 159.18,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 351.78
+    },
+    "created_at": "2024-06-21 06:38:30+00:00"
+  },
+  {
+    "issue_number": 9011,
+    "title": "Improve Error Messaging for Poetry Scripts when Missing Main Package",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 159.63,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 352.24
+    },
+    "created_at": "2024-02-24 21:23:00+00:00"
+  },
+  {
+    "issue_number": 9010,
+    "title": "Improvement: Enhance Error Message for Main Package Not Found",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 159.63,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 352.24
+    },
+    "created_at": "2024-02-24 21:10:34+00:00"
+  },
+  {
+    "issue_number": 3291,
+    "title": "Auth failure when installing from multiple private repos",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 161.83,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 354.44
+    },
+    "created_at": "2020-10-26 18:49:47+00:00"
+  },
+  {
+    "issue_number": 9185,
+    "title": "poetry 1.8: Error installing packages from private artifactory repository",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 166.36,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 358.96
+    },
+    "created_at": "2024-03-20 17:50:28+00:00"
+  },
+  {
+    "issue_number": 7731,
+    "title": "Add support to `poetry show` for packages that are not installed",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 167.02,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 359.62
+    },
+    "created_at": "2023-03-28 17:12:12+00:00"
+  },
+  {
+    "issue_number": 9156,
+    "title": "Support for combining sources/indexes",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 168.18,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 360.79
+    },
+    "created_at": "2024-03-14 12:04:11+00:00"
+  },
+  {
+    "issue_number": 9155,
+    "title": "Ability to exclude certain dependencies altogether",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 168.18,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 360.79
+    },
+    "created_at": "2024-03-14 10:28:05+00:00"
+  },
+  {
+    "issue_number": 7990,
+    "title": "Ship Poetry releases with pinned dependencies",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 172.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 365.35
+    },
+    "created_at": "2023-05-23 15:22:16+00:00"
+  },
+  {
+    "issue_number": 7935,
+    "title": "Avoid downloading wheels that do not match Python requirement",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 172.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 365.35
+    },
+    "created_at": "2023-05-16 19:33:10+00:00"
+  },
+  {
+    "issue_number": 7897,
+    "title": "Actually switch directory with --directory/-C",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 172.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 365.35
+    },
+    "created_at": "2023-05-09 19:01:56+00:00"
+  },
+  {
+    "issue_number": 4036,
+    "title": "Official Docker containers?",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 172.74,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 365.35
+    },
+    "created_at": "2021-05-04 20:23:25+00:00"
+  },
+  {
+    "issue_number": 8864,
+    "title": "`poetry init --author` doesn't seem to allow multiple authors on Windows",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 173.41,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 366.02
+    },
+    "created_at": "2024-01-10 01:04:59+00:00"
+  },
+  {
+    "issue_number": 7299,
+    "title": "Specify a different python version for a dependency group",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 173.41,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 366.02
+    },
+    "created_at": "2023-01-04 16:33:55+00:00"
+  },
+  {
+    "issue_number": 7370,
+    "title": "Package installation fail during parallel poetry runs",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 173.7,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 366.3
+    },
+    "created_at": "2023-01-19 13:07:30+00:00"
+  },
+  {
+    "issue_number": 9527,
+    "title": "[Windows] Installing a package from git is leading to \"No such file or directory",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/windows",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 174.39,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 366.99
+    },
+    "created_at": "2024-07-03 12:36:25+00:00"
+  },
+  {
+    "issue_number": 8192,
+    "title": "venv created by poetry seems to 'hide' pip resulting in mixed languages error me",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 174.39,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 366.99
+    },
+    "created_at": "2023-07-12 20:10:32+00:00"
+  },
+  {
+    "issue_number": 8157,
+    "title": "poetry should not prepend `sys.path` with `__vendor_site__`",
+    "labels": [
+      "kind/bug",
+      "area/core",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 174.39,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 366.99
+    },
+    "created_at": "2023-07-05 11:12:24+00:00"
+  },
+  {
+    "issue_number": 658,
+    "title": "Document difference between poetry plugins and entrypoints.",
+    "labels": [
+      "area/docs"
+    ],
+    "predicted_resolution_days": 175.44,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 368.05
+    },
+    "created_at": "2018-11-21 03:03:19+00:00"
+  },
+  {
+    "issue_number": 9136,
+    "title": "Poetry 2.0 removals and other breaking changes",
+    "labels": [],
+    "predicted_resolution_days": 176.75,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 369.36
+    },
+    "created_at": "2024-03-10 17:10:51+00:00"
+  },
+  {
+    "issue_number": 9313,
+    "title": "Poetry check virtual environment command for git hooks",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 184.64,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 377.24
+    },
+    "created_at": "2024-04-17 07:50:25+00:00"
+  },
+  {
+    "issue_number": 9263,
+    "title": "Parallelize removing deps in `poetry intall --sync`",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 184.64,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 377.24
+    },
+    "created_at": "2024-04-03 05:16:59+00:00"
+  },
+  {
+    "issue_number": 8866,
+    "title": "Not respecting priority for wildcard/inequality requirements",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "status/needs-reproduction"
+    ],
+    "predicted_resolution_days": 188.33,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 380.93
+    },
+    "created_at": "2024-01-10 15:45:12+00:00"
+  },
+  {
+    "issue_number": 9505,
+    "title": "List index out of range when installing yanked package with no dependency",
+    "labels": [
+      "kind/bug",
+      "area/error-handling",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 188.67,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 381.28
+    },
+    "created_at": "2024-06-19 12:49:32+00:00"
+  },
+  {
+    "issue_number": 6455,
+    "title": "Poetry 1.2.0 doesn't seem to like shortened git commit hashes",
+    "labels": [
+      "area/ux",
+      "status/confirmed",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 188.92,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 381.53
+    },
+    "created_at": "2022-09-08 18:43:23+00:00"
+  },
+  {
+    "issue_number": 7601,
+    "title": "Document ability to set verbosity level through environment variable",
+    "labels": [
+      "area/docs",
+      "good first issue"
+    ],
+    "predicted_resolution_days": 189.22,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 381.83
+    },
+    "created_at": "2023-03-03 21:40:18+00:00"
+  },
+  {
+    "issue_number": 8130,
+    "title": "poetry version bumps with --version-file options",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 190.08,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 382.69
+    },
+    "created_at": "2023-06-24 19:56:10+00:00"
+  },
+  {
+    "issue_number": 9415,
+    "title": "`poetry -C path/to/project add package` installs package with relative path to p",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 190.23,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 382.84
+    },
+    "created_at": "2024-05-14 10:52:22+00:00"
+  },
+  {
+    "issue_number": 9396,
+    "title": "Installation issue with `pipx` on macOS?",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/python"
+    ],
+    "predicted_resolution_days": 190.23,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 382.84
+    },
+    "created_at": "2024-05-07 20:37:01+00:00"
+  },
+  {
+    "issue_number": 9452,
+    "title": "Pip does not work in poetry installation",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "status/needs-reproduction"
+    ],
+    "predicted_resolution_days": 190.38,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 382.99
+    },
+    "created_at": "2024-05-29 10:09:46+00:00"
+  },
+  {
+    "issue_number": 3346,
+    "title": "{cache-dir}/virtualenvs may be too volatile a storage location for some users",
+    "labels": [
+      "area/venv",
+      "status/needs-consensus"
+    ],
+    "predicted_resolution_days": 190.82,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 383.43
+    },
+    "created_at": "2020-11-10 11:02:24+00:00"
+  },
+  {
+    "issue_number": 7744,
+    "title": "poetry throws an error about SHA string length when trying to install a dep from",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 191.04,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 383.64
+    },
+    "created_at": "2023-03-30 19:26:47+00:00"
+  },
+  {
+    "issue_number": 8909,
+    "title": "Support for `--config-settings` options for `poetry add --editable`",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 191.19,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 383.8
+    },
+    "created_at": "2024-01-25 20:58:19+00:00"
+  },
+  {
+    "issue_number": 8889,
+    "title": "fix inconsistent behavior: poetry install wheel with \"malformed\" filename fails ",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 191.19,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 383.8
+    },
+    "created_at": "2024-01-18 12:49:04+00:00"
+  },
+  {
+    "issue_number": 8847,
+    "title": "Use `poetry.toml` everywhere instead of `config.toml` in some places and `poetry",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 191.19,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 383.8
+    },
+    "created_at": "2024-01-04 09:29:51+00:00"
+  },
+  {
+    "issue_number": 8846,
+    "title": "Add a `poetry check --sync` command",
+    "labels": [
+      "kind/feature",
+      "status/waiting-on-response"
+    ],
+    "predicted_resolution_days": 191.19,
+    "confidence_interval": {
+      "lower": 0.0,
+      "upper": 383.8
+    },
+    "created_at": "2024-01-04 08:54:47+00:00"
+  },
+  {
+    "issue_number": 75,
+    "title": "Detect pyproject.toml changes and automatically run `poetry install` if needed",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 193.23,
+    "confidence_interval": {
+      "lower": 0.62,
+      "upper": 385.83
+    },
+    "created_at": "2018-04-30 01:38:40+00:00"
+  },
+  {
+    "issue_number": 8219,
+    "title": "Add a dependency as editable and non-editable",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 193.92,
+    "confidence_interval": {
+      "lower": 1.31,
+      "upper": 386.52
+    },
+    "created_at": "2023-07-21 09:58:48+00:00"
+  },
+  {
+    "issue_number": 8521,
+    "title": "System site packages is not seen as a Python package",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 194.29,
+    "confidence_interval": {
+      "lower": 1.68,
+      "upper": 386.89
+    },
+    "created_at": "2023-10-09 09:13:47+00:00"
+  },
+  {
+    "issue_number": 8573,
+    "title": "Poetry ignores no-binary options and downloads .whl files",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 194.77,
+    "confidence_interval": {
+      "lower": 2.16,
+      "upper": 387.37
+    },
+    "created_at": "2023-10-25 09:21:02+00:00"
+  },
+  {
+    "issue_number": 7723,
+    "title": "poetry publish uses pyproject.toml instead of built artifacts for metadata",
+    "labels": [
+      "kind/bug",
+      "area/publishing",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 195.29,
+    "confidence_interval": {
+      "lower": 2.68,
+      "upper": 387.9
+    },
+    "created_at": "2023-03-27 14:24:22+00:00"
+  },
+  {
+    "issue_number": 7644,
+    "title": "`poetry build` gets slower the more files are in the project directory",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 195.29,
+    "confidence_interval": {
+      "lower": 2.68,
+      "upper": 387.9
+    },
+    "created_at": "2023-03-13 18:51:26+00:00"
+  },
+  {
+    "issue_number": 8467,
+    "title": "Creating new virtualenv fails with cryptic error for project with invalid name",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 196.18,
+    "confidence_interval": {
+      "lower": 3.58,
+      "upper": 388.79
+    },
+    "created_at": "2023-09-25 14:03:22+00:00"
+  },
+  {
+    "issue_number": 8205,
+    "title": "`poetry lock --check` doesn't warn of missmatch in versions of local dependencie",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 205.43,
+    "confidence_interval": {
+      "lower": 12.82,
+      "upper": 398.03
+    },
+    "created_at": "2023-07-18 08:33:28+00:00"
+  },
+  {
+    "issue_number": 8353,
+    "title": "environment markers : platform_version gives an empty constraint when value has ",
+    "labels": [
+      "kind/bug",
+      "area/core"
+    ],
+    "predicted_resolution_days": 205.81,
+    "confidence_interval": {
+      "lower": 13.21,
+      "upper": 398.42
+    },
+    "created_at": "2023-08-22 22:11:12+00:00"
+  },
+  {
+    "issue_number": 8670,
+    "title": "Poetry fails to create lock file when specifying 'linux' platform: Package('pywi",
+    "labels": [
+      "kind/bug",
+      "area/solver"
+    ],
+    "predicted_resolution_days": 205.92,
+    "confidence_interval": {
+      "lower": 13.32,
+      "upper": 398.53
+    },
+    "created_at": "2023-11-14 10:09:08+00:00"
+  },
+  {
+    "issue_number": 8409,
+    "title": "Pedantic `IncompatibleConstraintsError` with `scipy` 1.11.2 on Debian",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 206.14,
+    "confidence_interval": {
+      "lower": 13.54,
+      "upper": 398.75
+    },
+    "created_at": "2023-09-05 17:49:27+00:00"
+  },
+  {
+    "issue_number": 8408,
+    "title": "Permission issue when using Poetry 1.5.1, updated from 1.1.13",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/distribution"
+    ],
+    "predicted_resolution_days": 206.14,
+    "confidence_interval": {
+      "lower": 13.54,
+      "upper": 398.75
+    },
+    "created_at": "2023-09-05 14:08:26+00:00"
+  },
+  {
+    "issue_number": 8097,
+    "title": "Missing linux and source files in lockfile",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 208.56,
+    "confidence_interval": {
+      "lower": 15.96,
+      "upper": 401.17
+    },
+    "created_at": "2023-06-13 10:59:57+00:00"
+  },
+  {
+    "issue_number": 1214,
+    "title": "Install globally with --user",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 209.94,
+    "confidence_interval": {
+      "lower": 17.34,
+      "upper": 402.55
+    },
+    "created_at": "2019-07-09 22:39:32+00:00"
+  },
+  {
+    "issue_number": 9412,
+    "title": "Restrictions coming from dependencies not in the main group are not considered",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 210.08,
+    "confidence_interval": {
+      "lower": 17.48,
+      "upper": 402.69
+    },
+    "created_at": "2024-05-13 14:44:11+00:00"
+  },
+  {
+    "issue_number": 8475,
+    "title": "poetry never resolves package combination: google-cloud-aiplatform kfp",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 210.52,
+    "confidence_interval": {
+      "lower": 17.92,
+      "upper": 403.13
+    },
+    "created_at": "2023-09-27 06:14:21+00:00"
+  },
+  {
+    "issue_number": 3004,
+    "title": "Rename \"develop\" option to \"editable\"",
+    "labels": [
+      "kind/feature",
+      "kind/enhancement"
+    ],
+    "predicted_resolution_days": 211.45,
+    "confidence_interval": {
+      "lower": 18.85,
+      "upper": 404.06
+    },
+    "created_at": "2020-09-30 14:58:24+00:00"
+  },
+  {
+    "issue_number": 9448,
+    "title": "2.0.0 Release",
+    "labels": [
+      "kind/release"
+    ],
+    "predicted_resolution_days": 213.26,
+    "confidence_interval": {
+      "lower": 20.66,
+      "upper": 405.87
+    },
+    "created_at": "2024-05-27 21:46:32+00:00"
+  },
+  {
+    "issue_number": 8170,
+    "title": "Display a message for packages that don't have  PyPI requirements",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 215.26,
+    "confidence_interval": {
+      "lower": 22.65,
+      "upper": 407.86
+    },
+    "created_at": "2023-07-08 22:48:26+00:00"
+  },
+  {
+    "issue_number": 5983,
+    "title": "Allow a folder with a list of wheels to be a repository, mimic pip --find-links",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 215.26,
+    "confidence_interval": {
+      "lower": 22.65,
+      "upper": 407.86
+    },
+    "created_at": "2022-07-09 22:11:41+00:00"
+  },
+  {
+    "issue_number": 9512,
+    "title": "Poetry doesn't install",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 215.52,
+    "confidence_interval": {
+      "lower": 22.91,
+      "upper": 408.12
+    },
+    "created_at": "2024-06-21 10:45:27+00:00"
+  },
+  {
+    "issue_number": 7185,
+    "title": "Unhelpful errors for projects in root directory",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 216.7,
+    "confidence_interval": {
+      "lower": 24.1,
+      "upper": 409.31
+    },
+    "created_at": "2022-12-12 18:13:25+00:00"
+  },
+  {
+    "issue_number": 8945,
+    "title": "`poetry show <package>` outputs incorrect version when `poetry.lock` contains mu",
+    "labels": [
+      "kind/bug",
+      "area/ux",
+      "area/show"
+    ],
+    "predicted_resolution_days": 216.94,
+    "confidence_interval": {
+      "lower": 24.33,
+      "upper": 409.54
+    },
+    "created_at": "2024-02-05 02:16:58+00:00"
+  },
+  {
+    "issue_number": 5885,
+    "title": "Add more context to Poetry error messages",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 219.44,
+    "confidence_interval": {
+      "lower": 26.83,
+      "upper": 412.04
+    },
+    "created_at": "2022-06-21 11:44:27+00:00"
+  },
+  {
+    "issue_number": 9249,
+    "title": "Add truststore support to use system certificate store",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 221.53,
+    "confidence_interval": {
+      "lower": 28.92,
+      "upper": 414.14
+    },
+    "created_at": "2024-03-29 01:45:33+00:00"
+  },
+  {
+    "issue_number": 9197,
+    "title": "Option to add package markers on the CLI",
+    "labels": [
+      "kind/feature",
+      "good first issue"
+    ],
+    "predicted_resolution_days": 221.53,
+    "confidence_interval": {
+      "lower": 28.92,
+      "upper": 414.14
+    },
+    "created_at": "2024-03-22 13:42:37+00:00"
+  },
+  {
+    "issue_number": 5330,
+    "title": "Ability to block a transitive dependency",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 221.53,
+    "confidence_interval": {
+      "lower": 28.92,
+      "upper": 414.14
+    },
+    "created_at": "2022-03-18 10:13:16+00:00"
+  },
+  {
+    "issue_number": 2357,
+    "title": "Optional dependencies are generated as required in wheel",
+    "labels": [
+      "kind/bug",
+      "area/build-system"
+    ],
+    "predicted_resolution_days": 222.55,
+    "confidence_interval": {
+      "lower": 29.95,
+      "upper": 415.16
+    },
+    "created_at": "2020-03-10 20:48:53+00:00"
+  },
+  {
+    "issue_number": 3155,
+    "title": "\ud83e\uddf9 Test Suite Cleanup: Permanent Issue",
+    "labels": [
+      "area/testing",
+      "good first issue"
+    ],
+    "predicted_resolution_days": 223.22,
+    "confidence_interval": {
+      "lower": 30.61,
+      "upper": 415.83
+    },
+    "created_at": "2020-10-09 01:17:01+00:00"
+  },
+  {
+    "issue_number": 7420,
+    "title": "Crash when configuring secrets from stdin",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 225.16,
+    "confidence_interval": {
+      "lower": 32.55,
+      "upper": 417.77
+    },
+    "created_at": "2023-01-27 12:19:27+00:00"
+  },
+  {
+    "issue_number": 5121,
+    "title": "Multiple constraints on same package cause O(exp(N)) checks",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 225.16,
+    "confidence_interval": {
+      "lower": 32.55,
+      "upper": 417.77
+    },
+    "created_at": "2022-01-28 06:45:05+00:00"
+  },
+  {
+    "issue_number": 9560,
+    "title": "Git-Dependency with non-HEAD rev fails to lock",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage",
+      "area/vcs",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 225.18,
+    "confidence_interval": {
+      "lower": 32.57,
+      "upper": 417.78
+    },
+    "created_at": "2024-07-17 10:32:15+00:00"
+  },
+  {
+    "issue_number": 8139,
+    "title": "Transient RuntimeError - unable to find installation candidates",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 230.07,
+    "confidence_interval": {
+      "lower": 37.46,
+      "upper": 422.67
+    },
+    "created_at": "2023-06-28 10:47:57+00:00"
+  },
+  {
+    "issue_number": 8119,
+    "title": "`virtualenvs.prefer-active-python` uses poetry's Python venv, not the active pye",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 230.07,
+    "confidence_interval": {
+      "lower": 37.46,
+      "upper": 422.67
+    },
+    "created_at": "2023-06-21 05:54:17+00:00"
+  },
+  {
+    "issue_number": 5506,
+    "title": "Solver breaks with related dependencies that are both conditional",
+    "labels": [
+      "kind/bug",
+      "area/solver"
+    ],
+    "predicted_resolution_days": 232.57,
+    "confidence_interval": {
+      "lower": 39.96,
+      "upper": 425.17
+    },
+    "created_at": "2022-04-26 22:44:36+00:00"
+  },
+  {
+    "issue_number": 4667,
+    "title": "Poetry init OSError on windows 10",
+    "labels": [
+      "kind/bug",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 235.35,
+    "confidence_interval": {
+      "lower": 42.74,
+      "upper": 427.95
+    },
+    "created_at": "2021-10-22 14:11:30+00:00"
+  },
+  {
+    "issue_number": 2965,
+    "title": "Can not load package data resources when running in a zipapp",
+    "labels": [
+      "area/core",
+      "kind/enhancement",
+      "good first issue"
+    ],
+    "predicted_resolution_days": 235.68,
+    "confidence_interval": {
+      "lower": 43.08,
+      "upper": 428.29
+    },
+    "created_at": "2020-09-25 11:08:19+00:00"
+  },
+  {
+    "issue_number": 9299,
+    "title": "Allow SSL certs to be defined per repository host",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 236.61,
+    "confidence_interval": {
+      "lower": 44.0,
+      "upper": 429.21
+    },
+    "created_at": "2024-04-11 23:14:18+00:00"
+  },
+  {
+    "issue_number": 5471,
+    "title": "Reference extras in tool.poetry.extras",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 236.61,
+    "confidence_interval": {
+      "lower": 44.0,
+      "upper": 429.21
+    },
+    "created_at": "2022-04-21 09:39:24+00:00"
+  },
+  {
+    "issue_number": 1715,
+    "title": "Dependency aliasing",
+    "labels": [
+      "area/solver",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 237.23,
+    "confidence_interval": {
+      "lower": 44.62,
+      "upper": 429.84
+    },
+    "created_at": "2019-12-12 16:16:09+00:00"
+  },
+  {
+    "issue_number": 8322,
+    "title": "Packages included in an Extra ",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 239.08,
+    "confidence_interval": {
+      "lower": 46.47,
+      "upper": 431.68
+    },
+    "created_at": "2023-08-16 19:22:25+00:00"
+  },
+  {
+    "issue_number": 6459,
+    "title": "Poetry with `virtualenvs.create false` installs packages into the wrong place on",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/external-issue"
+    ],
+    "predicted_resolution_days": 242.11,
+    "confidence_interval": {
+      "lower": 49.5,
+      "upper": 434.72
+    },
+    "created_at": "2022-09-09 05:36:25+00:00"
+  },
+  {
+    "issue_number": 6371,
+    "title": "Ubuntu 22.04, Python 3.10, and broken virtual environment layouts",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/external-issue"
+    ],
+    "predicted_resolution_days": 242.11,
+    "confidence_interval": {
+      "lower": 49.5,
+      "upper": 434.72
+    },
+    "created_at": "2022-09-02 17:27:21+00:00"
+  },
+  {
+    "issue_number": 9405,
+    "title": "poetry publish fails when tool.poetry.source is specified throwing \"a repository",
+    "labels": [
+      "kind/bug",
+      "area/publishing",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 244.23,
+    "confidence_interval": {
+      "lower": 51.62,
+      "upper": 436.83
+    },
+    "created_at": "2024-05-10 09:46:50+00:00"
+  },
+  {
+    "issue_number": 7881,
+    "title": "Intermittent Hash Validation Failures",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 244.23,
+    "confidence_interval": {
+      "lower": 51.62,
+      "upper": 436.83
+    },
+    "created_at": "2023-05-05 15:57:17+00:00"
+  },
+  {
+    "issue_number": 8718,
+    "title": "Add 'dev' as version bump rule for developmental releases. ",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 250.29,
+    "confidence_interval": {
+      "lower": 57.68,
+      "upper": 442.9
+    },
+    "created_at": "2023-11-27 14:51:31+00:00"
+  },
+  {
+    "issue_number": 2492,
+    "title": "poetry show --tree warns about circular dependency when there aren't any",
+    "labels": [
+      "kind/bug",
+      "area/cli",
+      "status/confirmed",
+      "version/1.2.1",
+      "area/show"
+    ],
+    "predicted_resolution_days": 251.96,
+    "confidence_interval": {
+      "lower": 59.36,
+      "upper": 444.57
+    },
+    "created_at": "2020-06-04 14:31:47+00:00"
+  },
+  {
+    "issue_number": 9670,
+    "title": "Implement PEP 639",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 254.18,
+    "confidence_interval": {
+      "lower": 61.58,
+      "upper": 446.79
+    },
+    "created_at": "2024-09-04 07:15:05+00:00"
+  },
+  {
+    "issue_number": 1351,
+    "title": "support for non-python extensions",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 254.18,
+    "confidence_interval": {
+      "lower": 61.58,
+      "upper": 446.79
+    },
+    "created_at": "2019-09-04 07:02:08+00:00"
+  },
+  {
+    "issue_number": 4160,
+    "title": "Add a way to donate / support project",
+    "labels": [
+      "area/project"
+    ],
+    "predicted_resolution_days": 255.2,
+    "confidence_interval": {
+      "lower": 62.59,
+      "upper": 447.8
+    },
+    "created_at": "2021-06-08 14:17:33+00:00"
+  },
+  {
+    "issue_number": 8384,
+    "title": "Poetry gives cryptic error on add git dependency attempt",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 255.96,
+    "confidence_interval": {
+      "lower": 63.36,
+      "upper": 448.57
+    },
+    "created_at": "2023-08-29 23:12:18+00:00"
+  },
+  {
+    "issue_number": 8316,
+    "title": "Poetry includes git-ignored files in build.",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 255.96,
+    "confidence_interval": {
+      "lower": 63.36,
+      "upper": 448.57
+    },
+    "created_at": "2023-08-15 15:16:38+00:00"
+  },
+  {
+    "issue_number": 9337,
+    "title": "EnvManager version reverse sort is lexical, i.e. it considers 3.2 before 3.12",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 256.65,
+    "confidence_interval": {
+      "lower": 64.04,
+      "upper": 449.25
+    },
+    "created_at": "2024-04-25 18:00:51+00:00"
+  },
+  {
+    "issue_number": 7819,
+    "title": "CalledProcessError Immediately after install when installing dynamic versioning ",
+    "labels": [
+      "kind/bug",
+      "area/plugin-api",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 256.65,
+    "confidence_interval": {
+      "lower": 64.04,
+      "upper": 449.25
+    },
+    "created_at": "2023-04-20 14:48:00+00:00"
+  },
+  {
+    "issue_number": 8450,
+    "title": "Add local editable dependency, with remote backup?",
+    "labels": [],
+    "predicted_resolution_days": 257.07,
+    "confidence_interval": {
+      "lower": 64.47,
+      "upper": 449.68
+    },
+    "created_at": "2023-09-18 13:19:39+00:00"
+  },
+  {
+    "issue_number": 8635,
+    "title": "Multiple dependencies pointing to one git repo creates git lockfile error",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 258.9,
+    "confidence_interval": {
+      "lower": 66.3,
+      "upper": 451.51
+    },
+    "created_at": "2023-11-08 15:25:34+00:00"
+  },
+  {
+    "issue_number": 9455,
+    "title": "Poetry doesn't use custom pyenv environment",
+    "labels": [
+      "kind/bug",
+      "area/init",
+      "status/triage",
+      "area/python"
+    ],
+    "predicted_resolution_days": 259.59,
+    "confidence_interval": {
+      "lower": 66.99,
+      "upper": 452.2
+    },
+    "created_at": "2024-05-30 02:36:34+00:00"
+  },
+  {
+    "issue_number": 845,
+    "title": "Support for pip install --build-options / --global-options / --install-options",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 260.46,
+    "confidence_interval": {
+      "lower": 67.85,
+      "upper": 453.06
+    },
+    "created_at": "2019-01-27 20:52:32+00:00"
+  },
+  {
+    "issue_number": 1012,
+    "title": "Allow root CA bundle to be configured",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 263.21,
+    "confidence_interval": {
+      "lower": 70.6,
+      "upper": 455.81
+    },
+    "created_at": "2019-04-03 08:15:02+00:00"
+  },
+  {
+    "issue_number": 9552,
+    "title": "The `poetry install` command does not modify the file `env.toml`",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 263.43,
+    "confidence_interval": {
+      "lower": 70.82,
+      "upper": 456.03
+    },
+    "created_at": "2024-07-15 11:56:30+00:00"
+  },
+  {
+    "issue_number": 8257,
+    "title": "Trace on excluded broken symlinks",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 263.43,
+    "confidence_interval": {
+      "lower": 70.82,
+      "upper": 456.03
+    },
+    "created_at": "2023-07-31 14:04:46+00:00"
+  },
+  {
+    "issue_number": 9616,
+    "title": "Add \"canonical version\" option to \"poetry version\"",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 263.58,
+    "confidence_interval": {
+      "lower": 70.97,
+      "upper": 456.18
+    },
+    "created_at": "2024-08-10 06:02:21+00:00"
+  },
+  {
+    "issue_number": 8301,
+    "title": "Add a command to print currently available script entry-points",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 263.58,
+    "confidence_interval": {
+      "lower": 70.97,
+      "upper": 456.18
+    },
+    "created_at": "2023-08-12 09:18:33+00:00"
+  },
+  {
+    "issue_number": 2758,
+    "title": "Force locking a specific version without adjusting constraints in pyproject.toml",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 263.58,
+    "confidence_interval": {
+      "lower": 70.97,
+      "upper": 456.18
+    },
+    "created_at": "2020-08-01 00:13:52+00:00"
+  },
+  {
+    "issue_number": 9367,
+    "title": "poetry install ends up with error unexpectedly",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 264.67,
+    "confidence_interval": {
+      "lower": 72.07,
+      "upper": 457.28
+    },
+    "created_at": "2024-05-01 17:47:46+00:00"
+  },
+  {
+    "issue_number": 7941,
+    "title": "Dependency.to_pep_508() creates invalid PEP508 requirements strings.",
+    "labels": [
+      "kind/bug",
+      "area/core",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 264.67,
+    "confidence_interval": {
+      "lower": 72.07,
+      "upper": 457.28
+    },
+    "created_at": "2023-05-17 17:34:54+00:00"
+  },
+  {
+    "issue_number": 2310,
+    "title": "Improve script section: support use of script files",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 267.42,
+    "confidence_interval": {
+      "lower": 74.82,
+      "upper": 460.03
+    },
+    "created_at": "2020-04-14 19:41:07+00:00"
+  },
+  {
+    "issue_number": 9161,
+    "title": "Add test coverage for tests/helpers.py",
+    "labels": [
+      "good first issue"
+    ],
+    "predicted_resolution_days": 268.29,
+    "confidence_interval": {
+      "lower": 75.68,
+      "upper": 460.9
+    },
+    "created_at": "2024-03-14 23:15:13+00:00"
+  },
+  {
+    "issue_number": 9497,
+    "title": "Main dependency shadows dev-dependency of local package",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 268.75,
+    "confidence_interval": {
+      "lower": 76.14,
+      "upper": 461.35
+    },
+    "created_at": "2024-06-17 08:51:22+00:00"
+  },
+  {
+    "issue_number": 8067,
+    "title": "Poetry self uninstall failing on Windows",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/distribution"
+    ],
+    "predicted_resolution_days": 268.75,
+    "confidence_interval": {
+      "lower": 76.14,
+      "upper": 461.35
+    },
+    "created_at": "2023-06-05 17:49:16+00:00"
+  },
+  {
+    "issue_number": 8196,
+    "title": "Cryptic 'None' message on version conflict error",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "area/error-handling",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 270.02,
+    "confidence_interval": {
+      "lower": 77.42,
+      "upper": 462.63
+    },
+    "created_at": "2023-07-13 20:23:37+00:00"
+  },
+  {
+    "issue_number": 9329,
+    "title": "In poetry 1.8.2, even when I run the `poetry self update` command, only the VERS",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/project/deps"
+    ],
+    "predicted_resolution_days": 271.38,
+    "confidence_interval": {
+      "lower": 78.78,
+      "upper": 463.99
+    },
+    "created_at": "2024-04-23 10:32:36+00:00"
+  },
+  {
+    "issue_number": 9154,
+    "title": "Extra path windows dependency",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/windows",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 272.48,
+    "confidence_interval": {
+      "lower": 79.87,
+      "upper": 465.09
+    },
+    "created_at": "2024-03-14 10:08:49+00:00"
+  },
+  {
+    "issue_number": 8723,
+    "title": "Support for Git Repository Packages which have LFS",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 281.95,
+    "confidence_interval": {
+      "lower": 89.35,
+      "upper": 474.56
+    },
+    "created_at": "2023-11-28 06:03:20+00:00"
+  },
+  {
+    "issue_number": 8499,
+    "title": "Depending on resolved version of another dependency",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 282.61,
+    "confidence_interval": {
+      "lower": 90.0,
+      "upper": 475.21
+    },
+    "created_at": "2023-10-03 12:43:54+00:00"
+  },
+  {
+    "issue_number": 9495,
+    "title": "`poetry show --outdated`: also show latest \"wanted\" version",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 283.71,
+    "confidence_interval": {
+      "lower": 91.11,
+      "upper": 476.32
+    },
+    "created_at": "2024-06-17 06:31:56+00:00"
+  },
+  {
+    "issue_number": 9366,
+    "title": "`poetry cache clear --all` Not enough arguments (missing: \"cache\")",
+    "labels": [
+      "area/cli",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 284.84,
+    "confidence_interval": {
+      "lower": 92.23,
+      "upper": 477.44
+    },
+    "created_at": "2024-05-01 17:03:43+00:00"
+  },
+  {
+    "issue_number": 9745,
+    "title": "Infinite loop when resolving dependencies",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 284.96,
+    "confidence_interval": {
+      "lower": 92.36,
+      "upper": 477.57
+    },
+    "created_at": "2024-10-09 10:34:52+00:00"
+  },
+  {
+    "issue_number": 3114,
+    "title": "Repository \"private\" does not exist | Since 1.1.0",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/repo"
+    ],
+    "predicted_resolution_days": 284.96,
+    "confidence_interval": {
+      "lower": 92.36,
+      "upper": 477.57
+    },
+    "created_at": "2020-10-07 10:03:56+00:00"
+  },
+  {
+    "issue_number": 9612,
+    "title": "Poetry doesn't respect private repository's branch/rev in pyproject.toml",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/vcs",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 289.13,
+    "confidence_interval": {
+      "lower": 96.53,
+      "upper": 481.74
+    },
+    "created_at": "2024-08-08 17:01:57+00:00"
+  },
+  {
+    "issue_number": 8328,
+    "title": "use of installed packages means poetry lock does not fully respect designated so",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 289.13,
+    "confidence_interval": {
+      "lower": 96.53,
+      "upper": 481.74
+    },
+    "created_at": "2023-08-17 22:47:48+00:00"
+  },
+  {
+    "issue_number": 7800,
+    "title": "Poetry build, python is not in the subpath of my folder",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 291.04,
+    "confidence_interval": {
+      "lower": 98.43,
+      "upper": 483.64
+    },
+    "created_at": "2023-04-15 21:00:47+00:00"
+  },
+  {
+    "issue_number": 6319,
+    "title": "Validate dependency extras",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 291.59,
+    "confidence_interval": {
+      "lower": 98.99,
+      "upper": 484.2
+    },
+    "created_at": "2022-09-01 08:42:05+00:00"
+  },
+  {
+    "issue_number": 9601,
+    "title": "Stop when authentication fails for private repository",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 291.86,
+    "confidence_interval": {
+      "lower": 99.25,
+      "upper": 484.46
+    },
+    "created_at": "2024-08-02 15:39:35+00:00"
+  },
+  {
+    "issue_number": 4360,
+    "title": "Poetry interactive add should show optional dependencies when one is given",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 291.86,
+    "confidence_interval": {
+      "lower": 99.25,
+      "upper": 484.46
+    },
+    "created_at": "2021-08-06 16:16:22+00:00"
+  },
+  {
+    "issue_number": 2776,
+    "title": "Prompt before recreating a broken virtualenv",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 291.86,
+    "confidence_interval": {
+      "lower": 99.25,
+      "upper": 484.46
+    },
+    "created_at": "2020-08-07 01:02:12+00:00"
+  },
+  {
+    "issue_number": 9297,
+    "title": "Legacy Repository Handler Allowing Mismatched Versions To Be Installed",
+    "labels": [
+      "kind/bug",
+      "area/error-handling",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 292.16,
+    "confidence_interval": {
+      "lower": 99.55,
+      "upper": 484.76
+    },
+    "created_at": "2024-04-10 21:58:21+00:00"
+  },
+  {
+    "issue_number": 8891,
+    "title": "`poetry add` should not install dependencies from groups previously excluded usi",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 296.95,
+    "confidence_interval": {
+      "lower": 104.34,
+      "upper": 489.55
+    },
+    "created_at": "2024-01-19 21:13:05+00:00"
+  },
+  {
+    "issue_number": 8871,
+    "title": "Only search source for designated platform and python",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 296.95,
+    "confidence_interval": {
+      "lower": 104.34,
+      "upper": 489.55
+    },
+    "created_at": "2024-01-12 00:44:05+00:00"
+  },
+  {
+    "issue_number": 7349,
+    "title": "provide a simple way to force reinstalling local dependencies",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 296.95,
+    "confidence_interval": {
+      "lower": 104.34,
+      "upper": 489.55
+    },
+    "created_at": "2023-01-13 09:30:18+00:00"
+  },
+  {
+    "issue_number": 5037,
+    "title": "(\ud83c\udf81) Support isolated dependencies that install like `pyprojectx`/`pipx`",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 296.95,
+    "confidence_interval": {
+      "lower": 104.34,
+      "upper": 489.55
+    },
+    "created_at": "2022-01-14 01:45:24+00:00"
+  },
+  {
+    "issue_number": 8443,
+    "title": "`.netrc` credentials take precedence over `poetry config http-basic`",
+    "labels": [
+      "kind/bug",
+      "area/config",
+      "status/triage",
+      "area/auth"
+    ],
+    "predicted_resolution_days": 297.95,
+    "confidence_interval": {
+      "lower": 105.34,
+      "upper": 490.56
+    },
+    "created_at": "2023-09-15 09:34:02+00:00"
+  },
+  {
+    "issue_number": 4472,
+    "title": "Poetry should use the filename from content-disposition when downloading URL dep",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/confirmed",
+      "version/1.2.1"
+    ],
+    "predicted_resolution_days": 297.95,
+    "confidence_interval": {
+      "lower": 105.34,
+      "upper": 490.56
+    },
+    "created_at": "2021-09-03 18:10:38+00:00"
+  },
+  {
+    "issue_number": 9079,
+    "title": "`poetry install` authentication issue with http-basic private index (in devconta",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/auth",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 298.18,
+    "confidence_interval": {
+      "lower": 105.57,
+      "upper": 490.79
+    },
+    "created_at": "2024-02-29 23:56:37+00:00"
+  },
+  {
+    "issue_number": 9075,
+    "title": "Poetry fails to install the correct version of a git dependency if there are cac",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 298.18,
+    "confidence_interval": {
+      "lower": 105.57,
+      "upper": 490.79
+    },
+    "created_at": "2024-02-29 15:29:35+00:00"
+  },
+  {
+    "issue_number": 6639,
+    "title": "Mechanism to reinstall (editable) dependencies to trigger metadata re-build",
+    "labels": [
+      "area/installer",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 298.94,
+    "confidence_interval": {
+      "lower": 106.34,
+      "upper": 491.55
+    },
+    "created_at": "2022-09-27 12:22:50+00:00"
+  },
+  {
+    "issue_number": 6419,
+    "title": "Support for conflicting dep extras, when they are exclusive of each other.",
+    "labels": [
+      "area/solver",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 298.94,
+    "confidence_interval": {
+      "lower": 106.34,
+      "upper": 491.55
+    },
+    "created_at": "2022-09-06 08:09:50+00:00"
+  },
+  {
+    "issue_number": 4842,
+    "title": "Support Groups as Extras",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 299.77,
+    "confidence_interval": {
+      "lower": 107.16,
+      "upper": 492.37
+    },
+    "created_at": "2021-11-28 20:08:36+00:00"
+  },
+  {
+    "issue_number": 1632,
+    "title": "Replacing the URL of a source (e.g. PyPI) at the global level",
+    "labels": [
+      "kind/feature",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 302.37,
+    "confidence_interval": {
+      "lower": 109.77,
+      "upper": 494.98
+    },
+    "created_at": "2019-11-26 03:43:51+00:00"
+  },
+  {
+    "issue_number": 9054,
+    "title": "poetry install --sync fails if a previously installed local editable package has",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 306.58,
+    "confidence_interval": {
+      "lower": 113.97,
+      "upper": 499.19
+    },
+    "created_at": "2024-02-28 08:20:45+00:00"
+  },
+  {
+    "issue_number": 7646,
+    "title": "using `poetry add 'package[all]'` doesn't install extra dependencies (happens on",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 307.19,
+    "confidence_interval": {
+      "lower": 114.59,
+      "upper": 499.8
+    },
+    "created_at": "2023-03-14 11:28:44+00:00"
+  },
+  {
+    "issue_number": 7153,
+    "title": "Poetry created wheel puts includes into root of site-packages folder & is missin",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 307.31,
+    "confidence_interval": {
+      "lower": 114.71,
+      "upper": 499.92
+    },
+    "created_at": "2022-12-07 01:05:12+00:00"
+  },
+  {
+    "issue_number": 6381,
+    "title": "`poetry show --solve` or enhance `--why`",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 316.14,
+    "confidence_interval": {
+      "lower": 123.54,
+      "upper": 508.75
+    },
+    "created_at": "2022-09-03 04:07:06+00:00"
+  },
+  {
+    "issue_number": 9247,
+    "title": "`poetry env info`  path are relative when used with `poetry -C` option.",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 317.51,
+    "confidence_interval": {
+      "lower": 124.9,
+      "upper": 510.11
+    },
+    "created_at": "2024-03-28 11:39:04+00:00"
+  },
+  {
+    "issue_number": 9158,
+    "title": "`poetry install` with namespace packages has race condition leading to broken fi",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 317.51,
+    "confidence_interval": {
+      "lower": 124.9,
+      "upper": 510.11
+    },
+    "created_at": "2024-03-14 14:15:00+00:00"
+  },
+  {
+    "issue_number": 8975,
+    "title": "`poetry show $DEPENDENCY` should also list the user defined dependencies that ca",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 317.56,
+    "confidence_interval": {
+      "lower": 124.95,
+      "upper": 510.16
+    },
+    "created_at": "2024-02-15 19:23:28+00:00"
+  },
+  {
+    "issue_number": 7519,
+    "title": "RFE: include dependency group in 'poetry show' output",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 317.56,
+    "confidence_interval": {
+      "lower": 124.95,
+      "upper": 510.16
+    },
+    "created_at": "2023-02-16 11:08:12+00:00"
+  },
+  {
+    "issue_number": 2184,
+    "title": "Enable offline installations: poetry install --download-only; poetry install --o",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 317.85,
+    "confidence_interval": {
+      "lower": 125.24,
+      "upper": 510.45
+    },
+    "created_at": "2020-03-13 20:54:28+00:00"
+  },
+  {
+    "issue_number": 5128,
+    "title": "(\ud83c\udf81) `poetry show X --version` would be pretty useful for scripts",
+    "labels": [
+      "area/cli",
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 319.61,
+    "confidence_interval": {
+      "lower": 127.0,
+      "upper": 512.21
+    },
+    "created_at": "2022-01-31 02:05:49+00:00"
+  },
+  {
+    "issue_number": 7088,
+    "title": "Updating develop attribute in path dependency forces to recreate the virtualenv ",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 332.26,
+    "confidence_interval": {
+      "lower": 139.65,
+      "upper": 524.86
+    },
+    "created_at": "2022-11-23 16:03:29+00:00"
+  },
+  {
+    "issue_number": 8742,
+    "title": "Add configuration option to specify the build format in pyproject.toml or other ",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 335.35,
+    "confidence_interval": {
+      "lower": 142.74,
+      "upper": 527.95
+    },
+    "created_at": "2023-12-04 14:04:19+00:00"
+  },
+  {
+    "issue_number": 496,
+    "title": "Make the lock file more merge-friendly",
+    "labels": [
+      "kind/enhancement",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 335.85,
+    "confidence_interval": {
+      "lower": 143.25,
+      "upper": 528.46
+    },
+    "created_at": "2018-10-16 20:21:45+00:00"
+  },
+  {
+    "issue_number": 461,
+    "title": "Suggestion: new command to bump versions of dependencies in `pyproject.toml`",
+    "labels": [
+      "area/cli",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 335.85,
+    "confidence_interval": {
+      "lower": 143.25,
+      "upper": 528.46
+    },
+    "created_at": "2018-10-02 05:26:04+00:00"
+  },
+  {
+    "issue_number": 9619,
+    "title": "poetry install didn't find the correct python version set by pyenv",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/python"
+    ],
+    "predicted_resolution_days": 336.49,
+    "confidence_interval": {
+      "lower": 143.89,
+      "upper": 529.1
+    },
+    "created_at": "2024-08-10 18:56:19+00:00"
+  },
+  {
+    "issue_number": 2270,
+    "title": "Support subprojects in a poetry project",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 337.76,
+    "confidence_interval": {
+      "lower": 145.15,
+      "upper": 530.36
+    },
+    "created_at": "2020-04-05 19:44:28+00:00"
+  },
+  {
+    "issue_number": 8826,
+    "title": "Poetry update with \"^0\" requirements.",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "status/needs-reproduction"
+    ],
+    "predicted_resolution_days": 339.17,
+    "confidence_interval": {
+      "lower": 146.57,
+      "upper": 531.78
+    },
+    "created_at": "2023-12-27 10:34:54+00:00"
+  },
+  {
+    "issue_number": 8797,
+    "title": "Interactive dependency prompt accepts invalid version strings",
+    "labels": [
+      "kind/bug",
+      "area/cli",
+      "status/triage",
+      "area/ux"
+    ],
+    "predicted_resolution_days": 340.57,
+    "confidence_interval": {
+      "lower": 147.96,
+      "upper": 533.17
+    },
+    "created_at": "2023-12-15 13:19:39+00:00"
+  },
+  {
+    "issue_number": 8765,
+    "title": "Bug: `poetry install` fails with transitive path dependencies via git",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 340.57,
+    "confidence_interval": {
+      "lower": 147.96,
+      "upper": 533.17
+    },
+    "created_at": "2023-12-08 21:30:59+00:00"
+  },
+  {
+    "issue_number": 9321,
+    "title": "feat: poetry env remove should display full path if using in-project virtualenvs",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 343.81,
+    "confidence_interval": {
+      "lower": 151.2,
+      "upper": 536.42
+    },
+    "created_at": "2024-04-18 07:40:56+00:00"
+  },
+  {
+    "issue_number": 9338,
+    "title": "Poetry doesn't install certain non-optional dependencies when run with --only ma",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 344.41,
+    "confidence_interval": {
+      "lower": 151.8,
+      "upper": 537.01
+    },
+    "created_at": "2024-04-25 21:15:49+00:00"
+  },
+  {
+    "issue_number": 8761,
+    "title": "Keyring access requested although non-publishing operations do not need any cred",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/auth"
+    ],
+    "predicted_resolution_days": 345.64,
+    "confidence_interval": {
+      "lower": 153.03,
+      "upper": 538.24
+    },
+    "created_at": "2023-12-08 19:45:35+00:00"
+  },
+  {
+    "issue_number": 7113,
+    "title": "Git repository and package name mismatch",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "status/needs-attention",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 346.7,
+    "confidence_interval": {
+      "lower": 154.1,
+      "upper": 539.31
+    },
+    "created_at": "2022-11-28 09:45:43+00:00"
+  },
+  {
+    "issue_number": 8516,
+    "title": "`poetry install --sync` in conda env gives `Path [...] does not exist` error",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 347.95,
+    "confidence_interval": {
+      "lower": 155.35,
+      "upper": 540.56
+    },
+    "created_at": "2023-10-06 15:45:50+00:00"
+  },
+  {
+    "issue_number": 2315,
+    "title": "Add caching for cirrus ci tasks",
+    "labels": [
+      "area/ci"
+    ],
+    "predicted_resolution_days": 348.12,
+    "confidence_interval": {
+      "lower": 155.52,
+      "upper": 540.73
+    },
+    "created_at": "2020-04-16 22:46:53+00:00"
+  },
+  {
+    "issue_number": 6398,
+    "title": "Document why virtual environments should (nearly) always be used, and system sit",
+    "labels": [
+      "area/docs"
+    ],
+    "predicted_resolution_days": 348.92,
+    "confidence_interval": {
+      "lower": 156.31,
+      "upper": 541.52
+    },
+    "created_at": "2022-09-04 13:11:29+00:00"
+  },
+  {
+    "issue_number": 8824,
+    "title": "poetry sometimes exits before changing some of the libraries' status",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/ux"
+    ],
+    "predicted_resolution_days": 351.05,
+    "confidence_interval": {
+      "lower": 158.44,
+      "upper": 543.65
+    },
+    "created_at": "2023-12-27 00:39:46+00:00"
+  },
+  {
+    "issue_number": 8593,
+    "title": "Poetry build sets python core metadata summary equals description, failing to up",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 353.26,
+    "confidence_interval": {
+      "lower": 160.65,
+      "upper": 545.86
+    },
+    "created_at": "2023-10-30 13:02:45+00:00"
+  },
+  {
+    "issue_number": 2496,
+    "title": "Saving custom scripts in pyproject.toml (alias npm run)",
+    "labels": [
+      "kind/feature",
+      "area/plugin-api"
+    ],
+    "predicted_resolution_days": 354.67,
+    "confidence_interval": {
+      "lower": 162.06,
+      "upper": 547.27
+    },
+    "created_at": "2020-06-05 12:07:05+00:00"
+  },
+  {
+    "issue_number": 1168,
+    "title": "Support for mutually exclusive dependencies across groups (e.g. path dependencie",
+    "labels": [
+      "area/solver",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 354.67,
+    "confidence_interval": {
+      "lower": 162.06,
+      "upper": 547.27
+    },
+    "created_at": "2019-06-14 15:34:30+00:00"
+  },
+  {
+    "issue_number": 8633,
+    "title": "`poetry check` does not take into a account path dependencies",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 355.57,
+    "confidence_interval": {
+      "lower": 162.97,
+      "upper": 548.18
+    },
+    "created_at": "2023-11-07 16:14:06+00:00"
+  },
+  {
+    "issue_number": 6933,
+    "title": "Author Regex Too Restrictive",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 355.57,
+    "confidence_interval": {
+      "lower": 162.97,
+      "upper": 548.18
+    },
+    "created_at": "2022-11-01 16:53:31+00:00"
+  },
+  {
+    "issue_number": 4854,
+    "title": "Poetry doesn't check extra sources for package",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 355.57,
+    "confidence_interval": {
+      "lower": 162.97,
+      "upper": 548.18
+    },
+    "created_at": "2021-11-30 14:23:03+00:00"
+  },
+  {
+    "issue_number": 4703,
+    "title": "Poetry will lock with two different versions of pandas if numpy is pinned",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 355.57,
+    "confidence_interval": {
+      "lower": 162.97,
+      "upper": 548.18
+    },
+    "created_at": "2021-11-02 22:02:45+00:00"
+  },
+  {
+    "issue_number": 7775,
+    "title": "poetry and pip disagree whether dependency should be installed due to wrong mark",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 362.25,
+    "confidence_interval": {
+      "lower": 169.64,
+      "upper": 554.85
+    },
+    "created_at": "2023-04-07 15:10:15+00:00"
+  },
+  {
+    "issue_number": 6956,
+    "title": "Installing JAX across MacOS and Linux.",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 363.37,
+    "confidence_interval": {
+      "lower": 170.77,
+      "upper": 555.98
+    },
+    "created_at": "2022-11-03 16:21:05+00:00"
+  },
+  {
+    "issue_number": 6951,
+    "title": "`poetry add` does not support paths without a directory component",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 363.37,
+    "confidence_interval": {
+      "lower": 170.77,
+      "upper": 555.98
+    },
+    "created_at": "2022-11-03 05:47:20+00:00"
+  },
+  {
+    "issue_number": 8697,
+    "title": "system-git-client fails to install from Pull Request",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 374.88,
+    "confidence_interval": {
+      "lower": 182.27,
+      "upper": 567.49
+    },
+    "created_at": "2023-11-21 13:48:33+00:00"
+  },
+  {
+    "issue_number": 7832,
+    "title": "(\ud83d\udc1e) No error message when `FileLocked`  appears for `poetry show --outdated`",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 376.85,
+    "confidence_interval": {
+      "lower": 184.25,
+      "upper": 569.46
+    },
+    "created_at": "2023-04-24 03:37:35+00:00"
+  },
+  {
+    "issue_number": 9751,
+    "title": "Support PEP 735 \u2013 Dependency Groups in pyproject.toml",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 379.06,
+    "confidence_interval": {
+      "lower": 186.46,
+      "upper": 571.67
+    },
+    "created_at": "2024-10-10 15:47:38+00:00"
+  },
+  {
+    "issue_number": 3435,
+    "title": "show project home url in `poetry show --outdated`",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 381.75,
+    "confidence_interval": {
+      "lower": 189.14,
+      "upper": 574.36
+    },
+    "created_at": "2020-12-01 09:50:07+00:00"
+  },
+  {
+    "issue_number": 9390,
+    "title": "Option to always create `src` folder when using `poetry new` command",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 382.07,
+    "confidence_interval": {
+      "lower": 189.46,
+      "upper": 574.67
+    },
+    "created_at": "2024-05-05 20:54:27+00:00"
+  },
+  {
+    "issue_number": 9389,
+    "title": "`poetry env delete` and `poetry env list` should be able to deal with broken env",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 382.07,
+    "confidence_interval": {
+      "lower": 189.46,
+      "upper": 574.67
+    },
+    "created_at": "2024-05-05 05:54:20+00:00"
+  },
+  {
+    "issue_number": 7889,
+    "title": "Sources used as repositories to publish to need a different URL to sources to do",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 382.07,
+    "confidence_interval": {
+      "lower": 189.46,
+      "upper": 574.67
+    },
+    "created_at": "2023-05-07 19:23:17+00:00"
+  },
+  {
+    "issue_number": 3322,
+    "title": "Two features for offline builds: show --toml/json and install --archive-dir",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 386.65,
+    "confidence_interval": {
+      "lower": 194.05,
+      "upper": 579.26
+    },
+    "created_at": "2020-11-04 08:16:20+00:00"
+  },
+  {
+    "issue_number": 7243,
+    "title": "Migrating to the new installer may cause keyring failures for existing keyring i",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 387.98,
+    "confidence_interval": {
+      "lower": 195.37,
+      "upper": 580.58
+    },
+    "created_at": "2022-12-23 11:41:59+00:00"
+  },
+  {
+    "issue_number": 9597,
+    "title": "Get more consistent output from `poetry show`",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 388.89,
+    "confidence_interval": {
+      "lower": 196.29,
+      "upper": 581.5
+    },
+    "created_at": "2024-08-01 08:20:50+00:00"
+  },
+  {
+    "issue_number": 2861,
+    "title": "Install without poetry.lock - option to respect existing version of installed de",
+    "labels": [
+      "area/solver",
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 388.89,
+    "confidence_interval": {
+      "lower": 196.29,
+      "upper": 581.5
+    },
+    "created_at": "2020-08-27 17:48:46+00:00"
+  },
+  {
+    "issue_number": 3416,
+    "title": "Expose stable Python API",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 391.95,
+    "confidence_interval": {
+      "lower": 199.35,
+      "upper": 584.56
+    },
+    "created_at": "2020-11-25 14:00:37+00:00"
+  },
+  {
+    "issue_number": 9782,
+    "title": "Document PEP 440 (Compatible Release) specifiers",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 392.82,
+    "confidence_interval": {
+      "lower": 200.21,
+      "upper": 585.43
+    },
+    "created_at": "2024-10-19 15:01:45+00:00"
+  },
+  {
+    "issue_number": 9755,
+    "title": "enhance the dependency management capabilities of Poetry",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 402.01,
+    "confidence_interval": {
+      "lower": 209.4,
+      "upper": 594.61
+    },
+    "created_at": "2024-10-12 07:11:38+00:00"
+  },
+  {
+    "issue_number": 7190,
+    "title": "`poetry env info` doesn't show env created with another python version",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 402.27,
+    "confidence_interval": {
+      "lower": 209.66,
+      "upper": 594.87
+    },
+    "created_at": "2022-12-13 08:44:08+00:00"
+  },
+  {
+    "issue_number": 3437,
+    "title": "Packages can only contain one destination per file",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 402.27,
+    "confidence_interval": {
+      "lower": 209.66,
+      "upper": 594.87
+    },
+    "created_at": "2020-12-01 18:31:50+00:00"
+  },
+  {
+    "issue_number": 2051,
+    "title": "Consider adding support for more wheel tags.",
+    "labels": [
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 403.01,
+    "confidence_interval": {
+      "lower": 210.4,
+      "upper": 595.62
+    },
+    "created_at": "2020-02-17 16:25:49+00:00"
+  },
+  {
+    "issue_number": 6872,
+    "title": "poetry env use fails with: ModuleNotFoundError: No module named 'encodings' ",
+    "labels": [
+      "kind/question",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 403.36,
+    "confidence_interval": {
+      "lower": 210.75,
+      "upper": 595.96
+    },
+    "created_at": "2022-10-23 17:57:44+00:00"
+  },
+  {
+    "issue_number": 8976,
+    "title": "`poetry shell` and `poetry run` are not activating the virtual environment",
+    "labels": [
+      "kind/bug",
+      "area/venv",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 405.65,
+    "confidence_interval": {
+      "lower": 213.04,
+      "upper": 598.25
+    },
+    "created_at": "2024-02-16 04:53:49+00:00"
+  },
+  {
+    "issue_number": 1998,
+    "title": "`poetry build` follows symlinks for files but not for directories",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/needs-consensus"
+    ],
+    "predicted_resolution_days": 405.65,
+    "confidence_interval": {
+      "lower": 213.04,
+      "upper": 598.25
+    },
+    "created_at": "2020-02-07 19:07:05+00:00"
+  },
+  {
+    "issue_number": 9326,
+    "title": "Poetry removes optional dependencies when using `poetry install --only`",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 412.02,
+    "confidence_interval": {
+      "lower": 219.41,
+      "upper": 604.63
+    },
+    "created_at": "2024-04-20 13:19:39+00:00"
+  },
+  {
+    "issue_number": 6940,
+    "title": "Poetry tries using Python2 (usr/local/bin/python) instead of the provided distri",
+    "labels": [
+      "kind/bug",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 420.95,
+    "confidence_interval": {
+      "lower": 228.34,
+      "upper": 613.55
+    },
+    "created_at": "2022-11-02 08:29:49+00:00"
+  },
+  {
+    "issue_number": 7051,
+    "title": "Support for \"soft\" or suggested constraints ",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 422.98,
+    "confidence_interval": {
+      "lower": 230.37,
+      "upper": 615.58
+    },
+    "created_at": "2022-11-17 00:51:10+00:00"
+  },
+  {
+    "issue_number": 8092,
+    "title": "Plugins cannot respond to `TERMINATE` event on non-Windows systems after `poetry",
+    "labels": [
+      "kind/bug",
+      "area/plugin-api",
+      "status/triage",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 423.97,
+    "confidence_interval": {
+      "lower": 231.36,
+      "upper": 616.57
+    },
+    "created_at": "2023-06-11 16:37:52+00:00"
+  },
+  {
+    "issue_number": 5958,
+    "title": "Global configuration of custom sources",
+    "labels": [
+      "kind/feature",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 431.67,
+    "confidence_interval": {
+      "lower": 239.06,
+      "upper": 624.27
+    },
+    "created_at": "2022-07-06 08:50:52+00:00"
+  },
+  {
+    "issue_number": 4438,
+    "title": "`poetry cache clear` should be able to clear all information for a single packag",
+    "labels": [
+      "kind/feature",
+      "area/ux",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 434.16,
+    "confidence_interval": {
+      "lower": 241.56,
+      "upper": 626.77
+    },
+    "created_at": "2021-08-25 02:02:37+00:00"
+  },
+  {
+    "issue_number": 8536,
+    "title": "Poetry should attempt to find both wheels and sdist during locking - across sour",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 436.09,
+    "confidence_interval": {
+      "lower": 243.48,
+      "upper": 628.69
+    },
+    "created_at": "2023-10-13 22:26:04+00:00"
+  },
+  {
+    "issue_number": 1301,
+    "title": "`poetry install --no-root` with only poetry.lock",
+    "labels": [
+      "area/installer",
+      "kind/feature"
+    ],
+    "predicted_resolution_days": 441.39,
+    "confidence_interval": {
+      "lower": 248.78,
+      "upper": 634.0
+    },
+    "created_at": "2019-08-15 09:30:57+00:00"
+  },
+  {
+    "issue_number": 8915,
+    "title": "poetry has issues when adding git repositories with recursive submodules, when t",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 447.78,
+    "confidence_interval": {
+      "lower": 255.17,
+      "upper": 640.39
+    },
+    "created_at": "2024-01-27 21:41:27+00:00"
+  },
+  {
+    "issue_number": 7748,
+    "title": "Extra marker is ignored in `poetry install`, but respected in `pip install`",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 459.59,
+    "confidence_interval": {
+      "lower": 266.98,
+      "upper": 652.2
+    },
+    "created_at": "2023-03-31 11:37:23+00:00"
+  },
+  {
+    "issue_number": 1739,
+    "title": "Report actual pyproject.toml error text in event of InvalidRequirement error",
+    "labels": [
+      "kind/bug",
+      "area/error-handling",
+      "kind/enhancement"
+    ],
+    "predicted_resolution_days": 464.85,
+    "confidence_interval": {
+      "lower": 272.25,
+      "upper": 657.46
+    },
+    "created_at": "2019-12-13 22:39:37+00:00"
+  },
+  {
+    "issue_number": 8957,
+    "title": "Project's and it's depedencies'  symlinks are resolved, which is unwanted",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/deps"
+    ],
+    "predicted_resolution_days": 466.0,
+    "confidence_interval": {
+      "lower": 273.4,
+      "upper": 658.61
+    },
+    "created_at": "2024-02-08 09:07:22+00:00"
+  },
+  {
+    "issue_number": 9695,
+    "title": "Allow plugins to define settings",
+    "labels": [
+      "kind/feature",
+      "area/plugin-api"
+    ],
+    "predicted_resolution_days": 473.47,
+    "confidence_interval": {
+      "lower": 280.86,
+      "upper": 666.07
+    },
+    "created_at": "2024-09-20 11:55:56+00:00"
+  },
+  {
+    "issue_number": 9564,
+    "title": "Resolution of dependencies in directories fails to respect explicit source",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 478.97,
+    "confidence_interval": {
+      "lower": 286.36,
+      "upper": 671.57
+    },
+    "created_at": "2024-07-19 21:24:05+00:00"
+  },
+  {
+    "issue_number": 9618,
+    "title": "Poetry hangs resolving ssh dependencies from unknown hosts",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/sources"
+    ],
+    "predicted_resolution_days": 479.05,
+    "confidence_interval": {
+      "lower": 286.44,
+      "upper": 671.66
+    },
+    "created_at": "2024-08-10 16:57:21+00:00"
+  },
+  {
+    "issue_number": 7798,
+    "title": "Cannot install package from git on Windows if repository contains symlinks",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/windows",
+      "area/vcs"
+    ],
+    "predicted_resolution_days": 493.04,
+    "confidence_interval": {
+      "lower": 300.43,
+      "upper": 685.65
+    },
+    "created_at": "2023-04-14 12:55:33+00:00"
+  },
+  {
+    "issue_number": 7256,
+    "title": "Arbitrary Equality Requirements",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 493.73,
+    "confidence_interval": {
+      "lower": 301.13,
+      "upper": 686.34
+    },
+    "created_at": "2022-12-27 15:58:35+00:00"
+  },
+  {
+    "issue_number": 8823,
+    "title": "pathological version solving? (django-distill + boto3)",
+    "labels": [
+      "kind/bug",
+      "area/solver",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 496.95,
+    "confidence_interval": {
+      "lower": 304.35,
+      "upper": 689.56
+    },
+    "created_at": "2023-12-25 22:57:37+00:00"
+  },
+  {
+    "issue_number": 8807,
+    "title": "build-system.requires ignored for tool.poetry.build.script",
+    "labels": [
+      "kind/bug",
+      "area/build-system",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 496.95,
+    "confidence_interval": {
+      "lower": 304.35,
+      "upper": 689.56
+    },
+    "created_at": "2023-12-18 22:56:30+00:00"
+  },
+  {
+    "issue_number": 8935,
+    "title": "poetry install generated .pth files don't use drive letter for mapped network dr",
+    "labels": [
+      "kind/bug",
+      "area/installer",
+      "status/triage",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 499.82,
+    "confidence_interval": {
+      "lower": 307.21,
+      "upper": 692.43
+    },
+    "created_at": "2024-02-02 01:58:19+00:00"
+  },
+  {
+    "issue_number": 7854,
+    "title": "getting error while running poetry show",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 501.81,
+    "confidence_interval": {
+      "lower": 309.21,
+      "upper": 694.42
+    },
+    "created_at": "2023-04-30 15:49:43+00:00"
+  },
+  {
+    "issue_number": 8713,
+    "title": "Add an explanation of the standard project structure",
+    "labels": [
+      "area/docs",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 553.06,
+    "confidence_interval": {
+      "lower": 360.46,
+      "upper": 745.67
+    },
+    "created_at": "2023-11-27 00:23:42+00:00"
+  },
+  {
+    "issue_number": 8813,
+    "title": "Including companion dependency only for specific versions of another dependency",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 563.21,
+    "confidence_interval": {
+      "lower": 370.6,
+      "upper": 755.81
+    },
+    "created_at": "2023-12-21 09:20:30+00:00"
+  },
+  {
+    "issue_number": 8752,
+    "title": "Add build-system.requires to lock file",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 584.58,
+    "confidence_interval": {
+      "lower": 391.98,
+      "upper": 777.19
+    },
+    "created_at": "2023-12-06 11:47:25+00:00"
+  },
+  {
+    "issue_number": 7166,
+    "title": "poetry show --outdated always lists mypy github repo",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/show"
+    ],
+    "predicted_resolution_days": 588.88,
+    "confidence_interval": {
+      "lower": 396.28,
+      "upper": 781.49
+    },
+    "created_at": "2022-12-10 02:42:18+00:00"
+  },
+  {
+    "issue_number": 8307,
+    "title": "`poetry.exe` in `.venv\\Scripts` Conflicts with Global Install",
+    "labels": [
+      "kind/bug",
+      "area/plugin-api",
+      "status/triage",
+      "area/windows"
+    ],
+    "predicted_resolution_days": 589.73,
+    "confidence_interval": {
+      "lower": 397.12,
+      "upper": 782.33
+    },
+    "created_at": "2023-08-13 21:50:13+00:00"
+  },
+  {
+    "issue_number": 3527,
+    "title": "Support lock dependencies with lowest solvable versions",
+    "labels": [
+      "kind/feature",
+      "status/triage",
+      "status/needs-consensus"
+    ],
+    "predicted_resolution_days": 592.88,
+    "confidence_interval": {
+      "lower": 400.27,
+      "upper": 785.48
+    },
+    "created_at": "2021-01-02 06:03:31+00:00"
+  },
+  {
+    "issue_number": 8763,
+    "title": "Support keyring found via $PATH",
+    "labels": [
+      "kind/feature",
+      "status/triage"
+    ],
+    "predicted_resolution_days": 605.31,
+    "confidence_interval": {
+      "lower": 412.71,
+      "upper": 797.92
+    },
+    "created_at": "2023-12-08 20:13:57+00:00"
+  },
+  {
+    "issue_number": 1945,
+    "title": "Configuration option to force use of system site-packages",
+    "labels": [
+      "kind/feature",
+      "area/venv"
+    ],
+    "predicted_resolution_days": 611.77,
+    "confidence_interval": {
+      "lower": 419.16,
+      "upper": 804.37
+    },
+    "created_at": "2020-01-25 13:19:35+00:00"
+  },
+  {
+    "issue_number": 8623,
+    "title": "Regression: Poetry 1.7 hangs instead of asking to unlock keyring",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/auth"
+    ],
+    "predicted_resolution_days": 616.43,
+    "confidence_interval": {
+      "lower": 423.82,
+      "upper": 809.03
+    },
+    "created_at": "2023-11-04 17:43:52+00:00"
+  },
+  {
+    "issue_number": 8618,
+    "title": "`poetry self update` fails for `pipx`-installed `poetry`",
+    "labels": [
+      "kind/bug",
+      "status/triage",
+      "area/distribution"
+    ],
+    "predicted_resolution_days": 616.43,
+    "confidence_interval": {
+      "lower": 423.82,
+      "upper": 809.03
+    },
+    "created_at": "2023-11-04 02:22:42+00:00"
+  },
+  {
+    "issue_number": 2778,
+    "title": "Build packages with pinned dependencies from .lock file",
+    "labels": [
+      "area/build-system",
+      "area/installer",
+      "kind/feature",
+      "area/core"
+    ],
+    "predicted_resolution_days": 681.84,
+    "confidence_interval": {
+      "lower": 489.23,
+      "upper": 874.44
+    },
+    "created_at": "2020-08-07 10:34:29+00:00"
+  }
+]
