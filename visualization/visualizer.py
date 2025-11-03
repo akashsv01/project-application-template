@@ -33,7 +33,7 @@ class Visualizer:
         return fig
     
 
-    def create_top_feature_requesters_chart(self, top_requesters, feature_issues, title="Top 10 Feature Requesters"):
+    def create_top_feature_requesters_chart(self, top_requesters, feature_issues, title="Top 10 Contributors by Feature Requests Submitted"):
         fig, ax = plt.subplots(figsize=(10, 6))
         
         # Filtering only issues from the top requesters
@@ -55,7 +55,7 @@ class Visualizer:
 
         ax.invert_yaxis() # Done so that we keep highest requester on top
 
-        ax.set_title(title, fontsize=14, fontweight='bold')
+        ax.set_title(title)
         ax.set_xlabel("Number of Feature Requests")
         ax.set_ylabel("Contributor")
         ax.legend(title="State", loc="lower right")
@@ -111,7 +111,7 @@ class Visualizer:
         ax.set_xlabel("Number of Issues Created")
         ax.set_ylabel("Contributor's username")
 
-        fig.suptitle(title, fontsize=16, y=0.98)
+        fig.suptitle(title)
 
         # Calculates what percentage of the overall issues that these top 40 contributors have created
         fig.text(0.5, 0.12,
@@ -226,7 +226,7 @@ class Visualizer:
 
         ax.set_ylabel("Contributors")
 
-        title = "Graph 7 - Contributor Lifecycle Stages"
+        title = "Contributor Lifecycle Stages"
         if latest_date is not None:
             title += f" (as of {latest_date.strftime('%b %Y')})"
         ax.set_title(title)

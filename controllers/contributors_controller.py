@@ -40,7 +40,7 @@ class ContributorsController:
         fig = self.visualizer.create_top_feature_requesters_chart(
             top_requesters,
             feature_issues,
-            "Top 10 Feature Requesters"
+            "Top 10 Contributors by Feature Requests Submitted"
         )
         return fig
 
