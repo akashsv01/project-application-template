@@ -1,46 +1,77 @@
-# ENPM611 Project Application Template
+# ENPM611 Project - Poetry GitHub Issues Analysis
 
-This is the template for the ENPM611 class project. Use this template in conjunction with the provided data to analyze GitHub issues for the [poetry](https://github.com/python-poetry/poetry/issues) Open Source project and generates interesting insights.
+A comprehensive data analytics application that analyzes GitHub issues for the [poetry](https://github.com/python-poetry/poetry/issues) Open Source project to generate actionable insights for project maintainers and contributors.
 
-This application template implements some of the basic functions:
+---
 
-- `data_loader.py`: Utility to load the issues from the provided data file and returns the issues in a runtime data structure (e.g., objects)
-- `model.py`: Implements the data model into which the data file is loaded. The data can then be accessed by accessing the fields of objects.
-- `config.py`: Supports configuring the application via the `config.json` file. You can add other configuration paramters to the `config.json` file.
-- `run.py`: This is the module that will be invoked to run your application. Based on the `--feature` command line parameter, one of the three analyses you implemented will be run. You need to extend this module to call other analyses.
+## What This Project Implements
 
-With the utility functions provided, you should focus on implementing creative analyses that generate intersting and insightful insights.
+This application provides three powerful analysis features:
 
-In addition to the utility functions, an example analysis has also been implemented in `example_analysis.py`. It illustrates how to use the provided utility functions and how to produce output.
+1. **Label Resolution Time Analysis & Prediction (Feature 1)** - Machine learning model that predicts issue resolution time based on labels and historical patterns
+2. **Contributors Dashboard (Feature 2)** - Comprehensive contributor behavior analysis with 7 interactive visualizations tracking engagement, lifecycle stages, and community health
+3. **Priority & Complexity Prediction (Feature 3)** - ML-based classification system that separates business urgency from technical complexity for intelligent issue triage
+
+### Core Utilities
+
+- `data_loader.py`: Loads GitHub issues from JSON data files into runtime data structures
+- `model.py`: Implements data models and machine learning models for issue analysis
+- `config.py`: Manages application configuration via `config.json` file
+- `run.py`: Main entry point that orchestrates feature execution based on command-line parameters
+
+---
 
 ## Setup
 
-To get started, your team should create a fork of this repository. Then, every team member should clone your repository to their local computer. 
+### 1. Clone the Repository
 
-
-### Install dependencies
-
-In the root directory of the application, create a virtual environment, activate that environment, and install the dependencies like so:
-
+```bash
+git clone https://github.com/akashsv01/project-application-template.git
+cd project-application-template
 ```
+
+### 2. Install Dependencies
+
+Create a virtual environment, activate it, and install required packages:
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### Download and configure the data file
+### 3. Download and Configure Data File
 
-Download the data file (in `json` format) from the project assignment in Canvas and update the `config.json` with the path to the file. Note, you can also specify an environment variable by the same name as the config setting (`ENPM611_PROJECT_DATA_PATH`) to avoid committing your personal path to the repository.
+1. Download the `poetry_issues_all.json` data file from the course assignment
+2. Place it in the `data/` directory
+3. Update `config.json` with the paths to your data and output files:
 
-
-### Run an analysis
-
-With everything set up, you should be able to run the existing example analysis:
-
+```json
+{
+  "ENPM611_PROJECT_DATA_PATH": "data/poetry_issues_all.json",
+  "ENPM611_PROJECT_OUTPUT_PATH": "output/"
+}
 ```
+
+### 4. Run an Analysis
+
+Test your setup by running the example analysis:
+
+```bash
 python run.py --feature 0
 ```
 
-That will output basic information about the issues to the command line.
+This outputs basic information about the issues to the command line.
 
+---
 
 ## VSCode run configuration
 
@@ -167,6 +198,124 @@ Different types of graphs and analysis are done based on the prediction time to 
 • output/open_issue_predictions.json - Predictions for open issues
 
 • output/visualizations/ - All generated graphs
+
+---
+
+## 🧑‍💻 Feature 2: CONTRIBUTORS DASHBOARD
+
+Feature 2 provides comprehensive contributor behavior analysis with **7 interactive visualizations** that reveal engagement patterns, community health metrics, and temporal activity trends.
+
+**Run the analysis:**
+```bash
+python run.py --feature 2
+```
+
+### 📊 Dashboard Overview
+
+This feature analyzes contributor patterns across multiple dimensions to provide actionable insights for project maintainers and community managers.
+
+---
+
+### 🐞 Graph 1: Bug Closure Distribution
+
+**What it shows:** Yearly distribution of bug closures, comparing contributions from the top 5 bug fixers every year versus the broader community.
+
+**Why it matters:**
+- Identifies concentration of bug-fixing responsibility.
+- Reveals potential bus factor risks (over-reliance on few contributors).
+- Highlights years with strong community participation vs. maintainer-heavy periods.
+
+---
+
+### 💡 Graph 2: Top Feature Requesters
+
+**What it shows:** Top 10 contributors ranked by number of feature requests, with stacked bars showing open vs. closed requests.
+
+**Why it matters:**
+- Highlights power users driving feature roadmap discussions.
+- Shows which contributors' requests are being prioritized.
+
+---
+
+### 📚 Graph 3: Documentation Issues Analysis
+
+**What it shows:** Monthly counts of open vs. closed documentation issues (bar chart) with average number of unique commenters per doc issue (line overlay).
+
+**Why it matters:**
+- Documentation quality directly impacts project accessibility and adoption.
+- High commenter counts indicate confusion or gaps in documentation.
+- Growing open issues suggest documentation debt accumulation.
+- Helps prioritize documentation sprints and improvements.
+
+---
+
+### 🧾 Graph 4: Issues Created per User
+
+**What it shows:** Top 40 contributors ranked by total number of issues created.
+
+**Why it matters:**
+- Identifies active community contributors.
+- Recognizes engaged users who are thoroughly testing and reporting.
+
+---
+
+### 🏆 Graph 5: Top Active Users per Year
+
+**What it shows:** Interactive Plotly chart with yearly rankings of the top 10 most active contributors per year. Activity means the total number of issues created, closed and commented.
+
+**Why it matters:**
+- Highlights sustained engagement and contributor retention.
+- Identifies emerging core contributors.
+- Shows how the contributor base evolves as project matures.
+- Helps recognize long-term community members for maintainer roles.
+
+---
+
+### 🔥 Graph 6: Engagement Heatmap
+
+**What it shows:** 2D heatmap showing contributor activity across days of week and hours of day, with color intensity representing activity volume.
+
+**Why it matters:**
+- Optimal timing for community events, release announcements, or live Q&A sessions.
+- Understanding global contributor distribution (timezone patterns).
+- Scheduling maintainer availability during high-activity periods.
+- Planning automated processes during low-activity hours.
+
+**Sample CLI Output:**
+```
+=== Overall Busiest Hours (across all days) ===
+Hour 15: 7.19% (average share of a day's activity)
+Hour 16: 6.62% (average share of a day's activity)
+Hour 18: 5.90% (average share of a day's activity)
+Hour 14: 5.83% (average share of a day's activity)
+Hour 17: 5.80% (average share of a day's activity)
+
+=== Top 3 Busy Hours Per Day ===
+
+Mon:
+  Hour 16 → 7.06% of Mon's activity
+  Hour 15 → 7.01% of Mon's activity
+  Hour 14 → 6.73% of Mon's activity
+  Total (Top 3) → 20.80% of Mon's activity
+...
+
+```
+
+---
+
+### 🌱 Graph 7: Contributor Lifecycle Stages
+
+**What it shows:** Bar chart classifying contributors into four lifecycle stages:
+- 🌟**Newcomer**: First activity within last 30 days
+- 🧠**Core Maintainer**: Sustained engagement for over 1 year
+- 🌤️**Graduated Contributor**: Inactive for 6+ months
+- ⚡**Active**: Regular contributors
+
+**Why it matters:**
+- High-level view of community health and contributor pipeline.
+- Identifies retention issues if many contributors are "graduating".
+- Shows whether project is attracting new contributors.
+- Helps plan mentorship programs for newcomers.
 
 ---
 
@@ -315,6 +464,6 @@ project-application-template/
 
 ## Team Contributions
 
-- **Feature 1**: Label Resolution Time Analysis - Neel Patel
-- **Feature 2**: Contributors Dashboard - [Team Member Name]
-- **Feature 3**: Priority & Complexity Prediction - Subiksha Jegadish
+- **Feature 1**: Label Resolution Time Analysis - [Neel Patel](https://github.com/neel3998)
+- **Feature 2**: Contributors Dashboard - [Akash S Vora](https://github.com/akashsv01)
+- **Feature 3**: Priority & Complexity Prediction - [Subiksha Jegadish](https://github.com/subikshajegadish)
