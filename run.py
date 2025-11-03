@@ -54,7 +54,7 @@ if args.feature == 0:
     ExampleAnalysis().run()
 
 elif args.feature == 1:
-    runner.run_feature(1)
+    runner.run_feature(args.feature, label=args.label)
 
 elif args.feature == 2:
     runner.run_feature(2)

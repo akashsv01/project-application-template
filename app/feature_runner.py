@@ -66,20 +66,18 @@ class FeatureRunner:
             print("\n" + "="*70)
             
             # Example: Query specific label
-            print("\nExample Query:")
-            example_labels = ['Area/Docs', 'kind/bug', 'kind/feature']
-            for label in example_labels:
-                result = controller.query_label_resolution_time(label)
-                if result['status'] == 'success':
-                    print(f"\n{label}:")
-                    print(f"  Expected resolution: {result['predicted_days']} days")
-                    print(f"  Based on {result['based_on_issues']} historical issues")
-                    print(f"  Confidence range: {result['confidence_range']['min_days']}-"
+            print("\nInput Query:")            
+            result = controller.query_label_resolution_time(label)
+            if result['status'] == 'success':
+                print(f"\n{label}:")
+                print(f"  Expected resolution: {result['predicted_days']} days")
+                print(f"  Based on {result['based_on_issues']} historical issues")
+                print(f"  Confidence range: {result['confidence_range']['min_days']}-"
                         f"{result['confidence_range']['max_days']} days")
-                else:
-                    print(f"\n{label}: {result['message']}")
+            else:
+                print(f"\n{label}: {result['message']}")
                 
-            print(results)
+            
 
         elif feature_number == 2:
             print("▶ Running Contributors Dashboard...")

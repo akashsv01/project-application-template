@@ -1,5 +1,5 @@
 {
-  "analysis_date": "2025-10-30T16:48:21.582460",
+  "analysis_date": "2025-11-03T11:16:21.278829",
   "summary_statistics": {
     "total_closed_issues": 5033,
     "total_unique_labels": 54,
@@ -675,8 +675,8 @@
       "r2_score": 0.04846818048878876
     },
     "ensemble": {
-      "mae_hours": 4622.542848574712,
-      "mae_days": 192.60595202394632,
+      "mae_hours": 4622.542848574711,
+      "mae_days": 192.6059520239463,
       "rmse_hours": 6649.197736933654,
       "r2_score": 0.04695989965792813
     },
