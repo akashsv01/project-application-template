@@ -77,6 +77,8 @@ area/docs/faq - 1.13 days (n=29)
 status/triage - 1.47 days (n=790)
 status/external-issue - 1.56 days (n=143)
 area/show - 4.44 days (n=1)
+
+
 ⏰ Top 10 Slowest Resolving Labels:
 
 status/accepted - 788.46 days (n=3)
@@ -89,7 +91,9 @@ kind/enhancement - 323.88 days (n=30)
 area/plugin-api - 323.20 days (n=8)
 status/needs-reproduction - 290.73 days (n=59)
 good first issue - 269.60 days (n=13)
+
 Top Feature Importances:
+
 1. month: 0.341
 2. day_of_week: 0.304
 3. num_labels: 0.134
@@ -97,6 +101,7 @@ Top Feature Importances:
 5. has_area_label: 0.068
 
 🔮 Sample Predictions for Open Issues (showing 5 of 317):
+
 • Issue #9183: 0.8 days
 Labels: area/docs, status/triage
 • Issue #9146: 4.4 days
@@ -109,9 +114,11 @@ Labels: kind/bug, area/installer, status/triage
 Labels: area/docs
 
 Some of the graphs and prediction time & statistics are as follows:
+
 Different types of graphs and analysis are done based on the prediction time to complete the open issues.
 
 Output Files:
+
 • output/label_resolution_analysis.json - Complete analysis results
 • output/label_statistics.json - Label-wise statistics
 • output/open_issue_predictions.json - Predictions for open issues
