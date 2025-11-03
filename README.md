@@ -83,11 +83,11 @@ The `.vscode/settings.json` also customizes the VSCode user interface sligthly t
 
 ## Feature 1: LABEL RESOLUTION TIME ANALYSIS AND PREDICTION
 
-Feature 1 is basically predicting the approximate time to complete the open issues based on Machine Learning model which was trained on closed issues. Different features were used to train the model. 
+Feature 1 is basically predicting the approximate time to complete the open issues based on Machine Learning model which was trained on closed issues. Different features were used to train the model. Feature 1 is an analysis that takes input label from user.
 
 Run below code to get analysis of feature 1:
 ```
-python run.py --feature 1
+python run.py --feature 1 --label kind/bug
 ```
 
 ### LABEL RESOLUTION TIME ANALYSIS AND PREDICTION:
