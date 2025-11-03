@@ -48,7 +48,7 @@ To make the application easier to debug, runtime configurations are provided to 
 
 The `.vscode/settings.json` also customizes the VSCode user interface sligthly to make navigation and debugging easier. But that is a matter of preference and can be turned off by removing the appropriate settings.
 
-## Feature 1: LABEL RESOLUTION TIME ANALYSIS AND PREDICTION
+### Feature 1: LABEL RESOLUTION TIME ANALYSIS AND PREDICTION
 
 Feature 1 is basically predicting the approximate time to complete the open issues based on Machine Learning model which was trained on closed issues. Different features were used to train the model. 
 
@@ -57,7 +57,7 @@ Run below code to get analysis of feature 1
 python run.py --feature 1
 ```
 
-LABEL RESOLUTION TIME ANALYSIS AND PREDICTION:
+## LABEL RESOLUTION TIME ANALYSIS AND PREDICTION:
 
 Overall Statistics:
 
@@ -71,7 +71,7 @@ Overall Statistics:
 
 
 
-📊 Top 10 Fastest Resolving Labels:
+## 📊 Top 10 Fastest Resolving Labels:
 
 status/invalid - 0.04 days (n=22)
 
@@ -95,7 +95,7 @@ area/show - 4.44 days (n=1)
 
 
 
-⏰ Top 10 Slowest Resolving Labels:
+## ⏰ Top 10 Slowest Resolving Labels:
 
 status/accepted - 788.46 days (n=3)
 
@@ -119,7 +119,7 @@ good first issue - 269.60 days (n=13)
 
 
 
-Top Feature Importances:
+## Top Feature Importances:
 
 1. month: 0.341
 
@@ -133,7 +133,7 @@ Top Feature Importances:
 
 
 
-🔮 Sample Predictions for Open Issues (showing 5 of 317):
+## 🔮 Sample Predictions for Open Issues (showing 5 of 317):
 
 • Issue #9183: 0.8 days
 Labels: area/docs, status/triage
@@ -152,7 +152,7 @@ Labels: area/docs
 
 
 
-Some of the graphs and prediction time & statistics are as follows:
+## Graphs and prediction time & statistics
 
 Different types of graphs and analysis are done based on the prediction time to complete the open issues.
 
